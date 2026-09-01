@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Events | Zion Church</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ================= EVENTS PAGE ================= */
+
+        .events-page {
+            background: #f4f3ee;
+            color: #171a16;
+        }
+
+        .events-hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 150px 0 90px;
+            background: #1e261f;
+            color: white;
+        }
+
+        .events-hero h1 {
+            font-size: clamp(5rem, 12vw, 12rem);
+            line-height: .82;
+            letter-spacing: -.075em;
+        }
+
+        .events-hero p {
+            max-width: 500px;
+            margin-top: 35px;
+            color: rgba(255,255,255,.58);
+        }
+
+        /* FEATURED */
+
+        .featured-event {
+            padding: 130px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            min-height: 600px;
+        }
+
+        .featured-image {
+            background:
+                linear-gradient(
+                    135deg,
+                    #555d54,
+                    #272e28
+                );
+
+            display: flex;
+            align-items: flex-end;
+            padding: 40px;
+
+            color: rgba(255,255,255,.4);
+            letter-spacing: .15em;
+            font-size: .6rem;
+        }
+
+        .featured-content {
+            padding: 70px;
+            background: #e1e2db;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-date {
+            font-size: .65rem;
+            letter-spacing: .15em;
+            color: #858a82;
+        }
+
+        .featured-content h2 {
+            margin-top: 25px;
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: .88;
+        }
+
+        .featured-content p {
+            max-width: 430px;
+            margin-top: 30px;
+            line-height: 1.7;
+        }
+
+        .featured-content .btn {
+            align-self: flex-start;
+            margin-top: 35px;
+        }
+
+        /* UPCOMING */
+
+        .upcoming {
+            padding: 130px 0 150px;
+            background: #e1e2db;
+        }
+
+        .events-heading {
+            max-width: 800px;
+            margin-bottom: 65px;
+        }
+
+        .events-heading h2 {
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .event-list {
+            border-top: 1px solid rgba(0,0,0,.15);
+        }
+
+        .event-row {
+            display: grid;
+            grid-template-columns: 100px 150px 1fr 40px;
+            align-items: center;
+            gap: 35px;
+
+            padding: 35px 0;
+
+            border-bottom: 1px solid rgba(0,0,0,.15);
+
+            transition:
+                padding .3s ease,
+                background .3s ease;
+        }
+
+        .event-row:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+            background: #f4f3ee;
+        }
+
+        .event-day strong {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .event-day span {
+            font-size: .6rem;
+            letter-spacing: .15em;
+            color: #858a82;
+        }
+
+        .event-type {
+            font-size: .6rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+            color: #858a82;
+        }
+
+        .event-row h3 {
+            font-size: 1.8rem;
+        }
+
+        .event-details {
+            margin-top: 7px;
+            color: #747a72;
+            font-size: .78rem;
+        }
+
+        .event-arrow {
+            font-size: 1.4rem;
+        }
+
+        /* CALENDAR */
+
+        .calendar-section {
+            padding: 140px 0;
+            background: #f4f3ee;
+        }
+
+        .calendar-box {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 100px;
+        }
+
+        .calendar-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .calendar-heading p {
+            max-width: 360px;
+            margin-top: 25px;
+        }
+
+        .calendar-list {
+            border-top: 1px solid rgba(0,0,0,.14);
+        }
+
+        .calendar-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(0,0,0,.14);
+        }
+
+        .calendar-item strong {
+            font-size: .85rem;
+            font-weight: 500;
+        }
+
+        .calendar-item span {
+            font-size: .72rem;
+            color: #777d75;
+            text-align: right;
+        }
+
+        /* PULPIT */
+
+        .pulpit-section {
+            padding: 140px 0;
+            background: #1e261f;
+            color: white;
+        }
+
+        .pulpit-section .about-kicker {
+            color: rgba(255,255,255,.4);
+        }
+
+        .pulpit-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 50px;
+            margin-bottom: 70px;
+        }
+
+        .pulpit-heading h2 {
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: .88;
+        }
+
+        .pulpit-heading p {
+            max-width: 330px;
+            color: rgba(255,255,255,.5);
+        }
+
+        .pulpit-list {
+            border-top: 1px solid rgba(255,255,255,.15);
+        }
+
+        .pulpit-row {
+            display: grid;
+            grid-template-columns: 130px 1fr 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,.15);
+        }
+
+        .pulpit-row span {
+            color: rgba(255,255,255,.4);
+            font-size: .65rem;
+        }
+
+        .pulpit-row strong {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .pulpit-row p {
+            color: rgba(255,255,255,.5);
+            font-size: .8rem;
+        }
+
+        /* ANNOUNCEMENTS */
+
+        .announcements {
+            padding: 130px 0;
+            background: #d7d9d1;
+        }
+
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 18px;
+            margin-top: 60px;
+        }
+
+        .announcement-card {
+            padding: 35px;
+            min-height: 280px;
+            background: #f4f3ee;
+        }
+
+        .announcement-card span {
+            font-size: .6rem;
+            color: #858a82;
+            letter-spacing: .14em;
+        }
+
+        .announcement-card h3 {
+            margin-top: 55px;
+            font-size: 1.8rem;
+        }
+
+        .announcement-card p {
+            margin-top: 12px;
+            font-size: .8rem;
+            line-height: 1.6;
+        }
+
+        /* CTA */
+
+        .events-cta {
+            padding: 150px 0;
+            text-align: center;
+            background: #f4f3ee;
+        }
+
+        .events-cta h2 {
+            max-width: 900px;
+            margin: auto;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: .86;
+            letter-spacing: -.07em;
+        }
+
+        .events-cta p {
+            max-width: 500px;
+            margin: 30px auto 45px;
+        }
+
+        @media(max-width:760px) {
+
+            .events-hero {
+                min-height: 78vh;
+                padding: 130px 0 70px;
+            }
+
+            .events-hero h1 {
+                font-size: clamp(4.5rem,18vw,7rem);
+            }
+
+            .featured-event,
+            .upcoming,
+            .calendar-section,
+            .pulpit-section,
+            .announcements,
+            .events-cta {
+                padding: 90px 0;
+            }
+
+            .featured-grid,
+            .calendar-box {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-content {
+                padding: 45px 25px;
+            }
+
+            .event-row {
+                grid-template-columns: 65px 1fr 25px;
+                gap: 15px;
+            }
+
+            .event-type {
+                display: none;
+            }
+
+            .event-row h3 {
+                font-size: 1.3rem;
+            }
+
+            .pulpit-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .pulpit-row {
+                grid-template-columns: 70px 1fr;
+                gap: 15px;
+            }
+
+            .pulpit-row p {
+                grid-column: 2;
+            }
+
+            .announcement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="events-page">
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span class="logo-mark">Z</span>
+
+                <span class="logo-text">
+                    <strong>ZION</strong>
+                    <small>CHURCH</small>
+                </span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="resources.html">Resources</a>
+                <a href="connect.html">Connect</a>
+            </nav>
+
+            <a href="index.html#watch-live" class="nav-live-btn">
+                Watch Live
+            </a>
+
+            <button class="menu-toggle"
+                    aria-label="Open menu"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="events-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    WHAT'S HAPPENING
+                </p>
+
+                <h1>
+                    Life at<br>
+                    Zion.
+                </h1>
+
+                <p>
+                    Gatherings, conferences, services and
+                    moments where we come together.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURED EVENT -->
+
+        <section class="featured-event">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    FEATURED
+                </p>
+
+                <div class="featured-grid">
+
+                    <div class="featured-image">
+                        EVENT IMAGE
+                    </div>
+
+                    <div class="featured-content">
+
+                        <span class="featured-date">
+                            00 MONTH 2026
+                        </span>
+
+                        <h2>
+                            Church
+                            Anniversary
+                        </h2>
+
+                        <p>
+                            Add the details of your featured
+                            church event here. Include the date,
+                            time, location and a short description.
+                        </p>
+
+                        <a href="contact.html"
+                           class="btn btn-primary">
+                            MORE DETAILS
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- UPCOMING -->
+
+        <section class="upcoming">
+
+            <div class="container">
+
+                <div class="events-heading">
+
+                    <p class="eyebrow">
+                        UPCOMING
+                    </p>
+
+                    <h2>
+                        Mark your
+                        calendar.
+                    </h2>
+
+                </div>
+
+
+                <div class="event-list">
+
+                    <a href="#" class="event-row">
+
+                        <div class="event-day">
+                            <strong>07</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <span class="event-type">
+                            SERVICE
+                        </span>
+
+                        <div>
+                            <h3>
+                                Sunday Worship
+                            </h3>
+
+                            <p class="event-details">
+                                9:00 AM · Main Church
+                            </p>
+                        </div>
+
+                        <span class="event-arrow">→</span>
+
+                    </a>
+
+
+                    <a href="#" class="event-row">
+
+                        <div class="event-day">
+                            <strong>12</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <span class="event-type">
+                            PRAYER
+                        </span>
+
+                        <div>
+                            <h3>
+                                Prayer Gathering
+                            </h3>
+
+                            <p class="event-details">
+                                7:00 PM · Church Hall
+                            </p>
+                        </div>
+
+                        <span class="event-arrow">→</span>
+
+                    </a>
+
+
+                    <a href="#" class="event-row">
+
+                        <div class="event-day">
+                            <strong>20</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <span class="event-type">
+                            YOUTH
+                        </span>
+
+                        <div>
+                            <h3>
+                                Youth Fellowship
+                            </h3>
+
+                            <p class="event-details">
+                                4:00 PM · Youth Hall
+                            </p>
+                        </div>
+
+                        <span class="event-arrow">→</span>
+
+                    </a>
+
+
+                    <a href="#" class="event-row">
+
+                        <div class="event-day">
+                            <strong>28</strong>
+                            <span>SEP</span>
+                        </div>
+
+                        <span class="event-type">
+                            CONFERENCE
+                        </span>
+
+                        <div>
+                            <h3>
+                                Special Conference
+                            </h3>
+
+                            <p class="event-details">
+                                Add conference details
+                            </p>
+                        </div>
+
+                        <span class="event-arrow">→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CALENDAR -->
+
+        <section class="calendar-section">
+
+            <div class="container calendar-box">
+
+                <div class="calendar-heading">
+
+                    <p class="eyebrow">
+                        CHURCH CALENDAR
+                    </p>
+
+                    <h2>
+                        Always
+                        something
+                        happening.
+                    </h2>
+
+                    <p>
+                        Keep up with regular gatherings,
+                        services and church activities.
+                    </p>
+
+                </div>
+
+
+                <div class="calendar-list">
+
+                    <div class="calendar-item">
+                        <strong>Sunday Worship</strong>
+                        <span>Every Sunday · 9:00 AM</span>
+                    </div>
+
+                    <div class="calendar-item">
+                        <strong>Bible Study</strong>
+                        <span>Every Wednesday · 7:00 PM</span>
+                    </div>
+
+                    <div class="calendar-item">
+                        <strong>Prayer Meeting</strong>
+                        <span>Every Friday · 7:00 PM</span>
+                    </div>
+
+                    <div class="calendar-item">
+                        <strong>Youth Gathering</strong>
+                        <span>Every Saturday</span>
+                    </div>
+
+                    <div class="calendar-item">
+                        <strong>Sunday School</strong>
+                        <span>Every Sunday</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PULPIT -->
+
+        <section class="pulpit-section">
+
+            <div class="container">
+
+                <div class="pulpit-heading">
+
+                    <div>
+
+                        <p class="about-kicker">
+                            PULPIT CALENDAR
+                        </p>
+
+                        <h2>
+                            From the
+                            pulpit.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        See upcoming speakers, sermon topics
+                        and special services.
+                    </p>
+
+                </div>
+
+
+                <div class="pulpit-list">
+
+                    <div class="pulpit-row">
+                        <span>07 SEP</span>
+                        <strong>Pastor Name</strong>
+                        <p>Message Title</p>
+                    </div>
+
+                    <div class="pulpit-row">
+                        <span>14 SEP</span>
+                        <strong>Pastor Name</strong>
+                        <p>Message Title</p>
+                    </div>
+
+                    <div class="pulpit-row">
+                        <span>21 SEP</span>
+                        <strong>Guest Speaker</strong>
+                        <p>Message Title</p>
+                    </div>
+
+                    <div class="pulpit-row">
+                        <span>28 SEP</span>
+                        <strong>Pastor Name</strong>
+                        <p>Message Title</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANNOUNCEMENTS -->
+
+        <section class="announcements">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    ANNOUNCEMENTS
+                </p>
+
+                <h2>
+                    Good to know.
+                </h2>
+
+
+                <div class="announcement-grid">
+
+                    <article class="announcement-card">
+
+                        <span>01</span>
+
+                        <h3>
+                            Church Notice
+                        </h3>
+
+                        <p>
+                            Add important church announcements
+                            and notices here.
+                        </p>
+
+                    </article>
+
+
+                    <article class="announcement-card">
+
+                        <span>02</span>
+
+                        <h3>
+                            Registration Open
+                        </h3>
+
+                        <p>
+                            Add information about registrations
+                            for upcoming programs.
+                        </p>
+
+                    </article>
+
+
+                    <article class="announcement-card">
+
+                        <span>03</span>
+
+                        <h3>
+                            Important Update
+                        </h3>
+
+                        <p>
+                            Add any important information
+                            the congregation should know.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="events-cta">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    COME JOIN US
+                </p>
+
+                <h2>
+                    There's a place
+                    for you here.
+                </h2>
+
+                <p>
+                    Come worship, connect and grow
+                    with us.
+                </p>
+
+                <a href="contact.html"
+                   class="btn btn-primary">
+                    PLAN YOUR VISIT
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+
+                    <span class="logo-mark">Z</span>
+
+                    <span class="logo-text">
+                        <strong>ZION</strong>
+                        <small>CHURCH</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    A community growing together
+                    in Christ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="about.html">About</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="sermons.html">Sermons</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Connect</h4>
+
+                <a href="connect.html">Connect</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Visit</h4>
+
+                <p>
+                    Zion Church<br>
+                    Bengaluru, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                Zion Church
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
