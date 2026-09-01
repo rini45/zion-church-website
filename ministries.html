@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ministries | Zion Church</title>
+
+    <meta
+        name="description"
+        content="Discover the ministries and communities at Zion Church."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =========================================
+           MINISTRIES PAGE
+           ========================================= */
+
+        .ministries-page {
+            background: #f4f3ee;
+            color: #171a16;
+        }
+
+        .ministries-hero {
+            min-height: 82vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 150px 0 90px;
+            background: #1e261f;
+            color: white;
+        }
+
+        .ministries-hero h1 {
+            max-width: 1000px;
+            font-size: clamp(5rem, 12vw, 12rem);
+            line-height: .82;
+            letter-spacing: -.075em;
+        }
+
+        .ministries-hero p {
+            max-width: 500px;
+            margin-top: 35px;
+            color: rgba(255,255,255,.58);
+        }
+
+        .ministries-intro {
+            padding: 140px 0;
+        }
+
+        .ministries-intro h2 {
+            max-width: 1000px;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .ministries-intro h2 span {
+            color: #858a82;
+        }
+
+        .ministry-list-section {
+            padding: 120px 0 150px;
+            background: #e4e5de;
+        }
+
+        .ministry-list {
+            margin-top: 65px;
+            border-top: 1px solid rgba(0,0,0,.15);
+        }
+
+        .ministry-item {
+            display: grid;
+            grid-template-columns: 80px 1fr 300px 40px;
+            gap: 35px;
+            align-items: center;
+
+            padding: 38px 0;
+
+            border-bottom: 1px solid rgba(0,0,0,.15);
+
+            transition:
+                padding .35s ease,
+                background .35s ease;
+        }
+
+        .ministry-item:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+            background: #f4f3ee;
+        }
+
+        .ministry-number {
+            font-size: .65rem;
+            color: #858a82;
+        }
+
+        .ministry-item h3 {
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .ministry-item p {
+            font-size: .82rem;
+            line-height: 1.6;
+        }
+
+        .ministry-arrow {
+            font-size: 1.5rem;
+            transition: transform .3s ease;
+        }
+
+        .ministry-item:hover .ministry-arrow {
+            transform: translateX(7px);
+        }
+
+        .ministry-feature {
+            padding: 150px 0;
+            background: #1e261f;
+            color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .feature-image {
+            aspect-ratio: 4 / 5;
+            display: grid;
+            place-items: center;
+            background: #343b34;
+            color: rgba(255,255,255,.35);
+            font-size: .6rem;
+            letter-spacing: .15em;
+        }
+
+        .feature-content h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .feature-content p {
+            max-width: 480px;
+            margin-top: 30px;
+            color: rgba(255,255,255,.58);
+            line-height: 1.8;
+        }
+
+        .feature-content a {
+            display: inline-block;
+            margin-top: 35px;
+            color: white;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,.5);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+        }
+
+        .ministry-cta {
+            padding: 150px 0;
+            text-align: center;
+            background: #d7d9d1;
+        }
+
+        .ministry-cta h2 {
+            max-width: 900px;
+            margin: auto;
+            font-size: clamp(4rem, 8vw, 8rem);
+            line-height: .87;
+            letter-spacing: -.07em;
+        }
+
+        .ministry-cta p {
+            max-width: 500px;
+            margin: 30px auto 45px;
+        }
+
+        @media (max-width: 760px) {
+
+            .ministries-hero {
+                min-height: 78vh;
+                padding: 130px 0 70px;
+            }
+
+            .ministries-hero h1 {
+                font-size: clamp(4.5rem, 18vw, 7rem);
+            }
+
+            .ministries-intro,
+            .ministry-list-section,
+            .ministry-feature,
+            .ministry-cta {
+                padding: 90px 0;
+            }
+
+            .ministries-intro h2,
+            .feature-content h2,
+            .ministry-cta h2 {
+                font-size: clamp(3.4rem, 15vw, 6rem);
+            }
+
+            .ministry-item {
+                grid-template-columns: 40px 1fr 25px;
+                gap: 15px;
+            }
+
+            .ministry-item p {
+                display: none;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .feature-image {
+                aspect-ratio: 1 / 1;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="ministries-page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">Z</span>
+
+                <span class="logo-text">
+                    <strong>ZION</strong>
+                    <small>CHURCH</small>
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="ministries.html" class="active">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="sermons.html">Sermons</a>
+                <a href="resources.html">Resources</a>
+                <a href="connect.html">Connect</a>
+
+            </nav>
+
+
+            <a
+                href="index.html#watch-live"
+                class="nav-live-btn"
+            >
+                Watch Live
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="ministries-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    LIFE AT ZION
+                </p>
+
+                <h1>
+                    Find your<br>
+                    people.
+                </h1>
+
+                <p>
+                    There is a place for you to grow,
+                    serve, connect and belong.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="ministries-intro">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    OUR MINISTRIES
+                </p>
+
+                <h2>
+                    Faith grows
+                    <span>when we grow together.</span>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MINISTRY LIST ================= -->
+
+        <section class="ministry-list-section">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    EXPLORE
+                </p>
+
+                <h2>
+                    Communities
+                    within Zion.
+                </h2>
+
+
+                <div class="ministry-list">
+
+
+                    <!-- LADIES -->
+
+                    <a href="#ladies" class="ministry-item">
+
+                        <span class="ministry-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Ladies Ministry
+                        </h3>
+
+                        <p>
+                            A community of women growing
+                            together through faith, prayer
+                            and fellowship.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- ANDREWS -->
+
+                    <a href="#andrews" class="ministry-item">
+
+                        <span class="ministry-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Andrews Ministry
+                        </h3>
+
+                        <p>
+                            Add the official description
+                            and purpose of Andrews Ministry.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- PRAYER -->
+
+                    <a href="#prayer" class="ministry-item">
+
+                        <span class="ministry-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Prayer Ministry
+                        </h3>
+
+                        <p>
+                            A community committed to seeking
+                            God together through prayer.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- YOUTH -->
+
+                    <a href="#youth" class="ministry-item">
+
+                        <span class="ministry-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Youth Ministry
+                        </h3>
+
+                        <p>
+                            Helping young people know Christ,
+                            grow in faith and live with purpose.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- SUNDAY SCHOOL -->
+
+                    <a href="#sunday-school" class="ministry-item">
+
+                        <span class="ministry-number">
+                            05
+                        </span>
+
+                        <h3>
+                            Sunday School
+                        </h3>
+
+                        <p>
+                            Helping the next generation discover
+                            God's Word and grow in faith.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- BIBLE STUDY -->
+
+                    <a href="#bible-study" class="ministry-item">
+
+                        <span class="ministry-number">
+                            06
+                        </span>
+
+                        <h3>
+                            Bible Study Groups
+                        </h3>
+
+                        <p>
+                            Smaller communities where we study
+                            Scripture and walk through life together.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <!-- CHURCHES -->
+
+                    <a href="#churches" class="ministry-item">
+
+                        <span class="ministry-number">
+                            07
+                        </span>
+
+                        <h3>
+                            Churches & Missions
+                        </h3>
+
+                        <p>
+                            Discover our sister churches,
+                            missions and outreach efforts.
+                        </p>
+
+                        <span class="ministry-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURE ================= -->
+
+        <section class="ministry-feature">
+
+            <div class="container feature-grid">
+
+                <div class="feature-image">
+                    MINISTRY IMAGE
+                </div>
+
+
+                <div class="feature-content">
+
+                    <p class="eyebrow">
+                        YOUTH MINISTRY
+                    </p>
+
+                    <h2>
+                        A generation
+                        with purpose.
+                    </h2>
+
+                    <p>
+                        Our youth ministry exists to create
+                        a place where young people can ask
+                        questions, build genuine friendships,
+                        encounter God and discover their purpose.
+                    </p>
+
+                    <a href="connect.html">
+                        GET CONNECTED →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="ministry-cta">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    YOU BELONG HERE
+                </p>
+
+                <h2>
+                    You don't have
+                    to walk alone.
+                </h2>
+
+                <p>
+                    Find a community, discover your gifts
+                    and become part of what God is doing.
+                </p>
+
+                <a
+                    href="connect.html"
+                    class="btn btn-primary"
+                >
+                    GET CONNECTED
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+
+                    <span class="logo-mark">Z</span>
+
+                    <span class="logo-text">
+                        <strong>ZION</strong>
+                        <small>CHURCH</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    A community growing together
+                    in Christ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Explore</h4>
+
+                <a href="about.html">About</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="events.html">Events</a>
+                <a href="sermons.html">Sermons</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Connect</h4>
+
+                <a href="connect.html">Connect</a>
+                <a href="resources.html">Resources</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Visit</h4>
+
+                <p>
+                    Zion Church<br>
+                    Bengaluru, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                Zion Church
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
