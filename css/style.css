@@ -1387,3 +1387,869 @@ p {
     background: var(--black);
     color: var(--white);
 }
+/* =========================================================
+   ZION ABOUT PAGE
+   Premium Church Layout
+========================================================= */
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-page {
+    background: #f6f4ef;
+}
+
+.about-hero {
+    position: relative;
+
+    min-height: 88vh;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 150px 0 90px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15,18,15,.82),
+            rgba(15,18,15,.45),
+            rgba(15,18,15,.18)
+        ),
+        url("../images/church.jpg")
+        center / cover no-repeat;
+
+    color: white;
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent 60%
+        );
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-label {
+    margin-bottom: 28px;
+
+    font-size: .7rem;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: rgba(255,255,255,.7);
+}
+
+.about-hero h1 {
+    max-width: 950px;
+
+    font-size: clamp(
+        4rem,
+        9vw,
+        9rem
+    );
+
+    line-height: .88;
+
+    letter-spacing: -.075em;
+}
+
+.about-hero-text {
+    max-width: 520px;
+
+    margin-top: 35px;
+
+    color: rgba(255,255,255,.78);
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.about-scroll {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 65px;
+
+    font-size: .62rem;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.about-scroll span {
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255,255,255,.6);
+}
+
+
+/* =========================================================
+   WHO WE ARE
+========================================================= */
+
+.identity-section {
+    padding: 130px 0;
+
+    background: #f6f4ef;
+}
+
+.about-kicker {
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: .68rem;
+    font-weight: 700;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: #8b867e;
+}
+
+.identity-intro {
+    max-width: 1000px;
+}
+
+.identity-intro h2 {
+    max-width: 950px;
+
+    font-size: clamp(
+        3rem,
+        6vw,
+        6rem
+    );
+
+    line-height: .92;
+
+    letter-spacing: -.065em;
+}
+
+.identity-intro h2 span {
+    display: block;
+
+    color: #9a968e;
+}
+
+.identity-words {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    margin-top: 90px;
+
+    border-top:
+        1px solid #dedbd3;
+}
+
+.identity-words > div {
+    min-height: 150px;
+
+    padding: 25px 20px;
+
+    border-right:
+        1px solid #dedbd3;
+}
+
+.identity-words > div:last-child {
+    border-right: 0;
+}
+
+.identity-words span {
+    display: block;
+
+    margin-bottom: 55px;
+
+    font-size: .65rem;
+
+    color: #9a968e;
+}
+
+.identity-words strong {
+    font-family: "Manrope", sans-serif;
+
+    font-size: .8rem;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   ZION TODAY
+========================================================= */
+
+.today-section {
+    padding: 130px 0;
+
+    background: #ece9e2;
+}
+
+.today-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.today-image {
+    overflow: hidden;
+
+    border-radius: 22px;
+}
+
+.today-image .image-placeholder {
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent
+        ),
+        url("../images/church.jpg")
+        center / cover no-repeat;
+}
+
+.image-placeholder span {
+    color: white;
+
+    font-size: .65rem;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.today-content {
+    max-width: 600px;
+}
+
+.today-content h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(
+        3rem,
+        5vw,
+        5.5rem
+    );
+
+    line-height: .9;
+}
+
+.today-content p {
+    max-width: 540px;
+
+    margin-bottom: 18px;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+.about-link {
+    display: inline-flex;
+
+    margin-top: 20px;
+    padding-bottom: 7px;
+
+    border-bottom:
+        1px solid #171717;
+
+    font-size: .7rem;
+    font-weight: 700;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   OUR STORY
+========================================================= */
+
+.story-section {
+    padding: 140px 0;
+
+    background: #f6f4ef;
+}
+
+.story-header {
+    max-width: 800px;
+
+    margin-bottom: 90px;
+}
+
+.story-header h2 {
+    margin-bottom: 25px;
+
+    font-size: clamp(
+        3.2rem,
+        6vw,
+        6rem
+    );
+
+    line-height: .9;
+}
+
+.story-header > p:last-child {
+    max-width: 500px;
+
+    font-size: 1rem;
+}
+
+.story-timeline {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 70px;
+}
+
+.story-timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 24px;
+
+    width: 1px;
+
+    background: #dedbd3;
+}
+
+.story-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        50px 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.story-marker {
+    position: relative;
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: white;
+
+    font-size: .65rem;
+    font-weight: 700;
+}
+
+.story-image {
+    min-height: 330px;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent
+        ),
+        url("../images/church.jpg")
+        center / cover no-repeat;
+}
+
+.story-image span {
+    color: white;
+
+    font-size: .6rem;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.story-copy {
+    padding: 30px 0;
+}
+
+.story-copy small {
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: .65rem;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+
+    color: #9a968e;
+}
+
+.story-copy h3 {
+    margin-bottom: 18px;
+
+    font-size: 2rem;
+}
+
+.story-copy p {
+    max-width: 470px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   BELIEFS
+========================================================= */
+
+.beliefs-section {
+    padding: 130px 0;
+
+    background: #1d251e;
+
+    color: white;
+}
+
+.beliefs-heading {
+    max-width: 850px;
+
+    margin-bottom: 80px;
+}
+
+.beliefs-heading .about-kicker {
+    color: rgba(255,255,255,.5);
+}
+
+.beliefs-heading h2 {
+    font-size: clamp(
+        3.5rem,
+        7vw,
+        7rem
+    );
+
+    line-height: .88;
+}
+
+.belief-list {
+    border-top:
+        1px solid rgba(255,255,255,.15);
+}
+
+.belief {
+    display: grid;
+
+    grid-template-columns:
+        70px 1fr;
+
+    gap: 30px;
+
+    padding: 32px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.15);
+}
+
+.belief > span {
+    font-size: .65rem;
+
+    color: rgba(255,255,255,.4);
+}
+
+.belief h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.8rem;
+}
+
+.belief p {
+    max-width: 600px;
+
+    color: rgba(255,255,255,.55);
+}
+
+
+/* =========================================================
+   VISION
+========================================================= */
+
+.vision-section {
+    padding: 140px 0;
+
+    background: #ece9e2;
+}
+
+.vision-layout {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+.vision-layout h2 {
+    max-width: 700px;
+
+    font-size: clamp(
+        3.5rem,
+        6vw,
+        6rem
+    );
+
+    line-height: .9;
+}
+
+.vision-right {
+    border-top:
+        1px solid #d5d2ca;
+}
+
+.vision-line {
+    display: grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    gap: 25px;
+
+    padding: 30px 0;
+
+    border-bottom:
+        1px solid #d5d2ca;
+}
+
+.vision-line span {
+    font-size: .65rem;
+
+    color: #8c887f;
+}
+
+.vision-line strong {
+    font-size: 1.15rem;
+
+    letter-spacing: .03em;
+}
+
+
+/* =========================================================
+   LEADERSHIP
+========================================================= */
+
+.leaders-section {
+    padding: 140px 0;
+
+    background: #f6f4ef;
+}
+
+.leaders-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 60px;
+
+    margin-bottom: 70px;
+}
+
+.leaders-heading h2 {
+    font-size: clamp(
+        3.5rem,
+        6vw,
+        6rem
+    );
+
+    line-height: .88;
+}
+
+.leaders-heading > p {
+    max-width: 350px;
+
+    line-height: 1.7;
+}
+
+.leaders-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.leader {
+    background: white;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #dedbd3;
+
+    transition:
+        transform .35s var(--ease),
+        box-shadow .35s var(--ease);
+}
+
+.leader:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.08);
+}
+
+.leader-photo {
+    aspect-ratio: 4 / 5;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0,0,0,.65),
+            transparent
+        ),
+        url("../images/leader.jpg")
+        center / cover no-repeat;
+}
+
+.leader-photo span {
+    color: white;
+
+    font-size: .6rem;
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+.leader-details {
+    padding: 25px;
+}
+
+.leader-details small {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: .6rem;
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+    color: #8b867e;
+}
+
+.leader-details h3 {
+    font-size: 1.6rem;
+}
+
+
+/* =========================================================
+   MINISTRY CTA
+========================================================= */
+
+.about-ministries {
+    padding: 130px 0;
+
+    background: #d9d8d0;
+
+    text-align: center;
+}
+
+.about-ministries h2 {
+    max-width: 850px;
+
+    margin: 0 auto 40px;
+
+    font-size: clamp(
+        3.5rem,
+        7vw,
+        7rem
+    );
+
+    line-height: .88;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-final {
+    padding: 150px 0;
+
+    background: #111;
+
+    color: white;
+
+    text-align: center;
+}
+
+.about-final .about-kicker {
+    color: rgba(255,255,255,.45);
+}
+
+.about-final h2 {
+    max-width: 850px;
+
+    margin: 0 auto 40px;
+
+    font-size: clamp(
+        4rem,
+        8vw,
+        8rem
+    );
+
+    line-height: .85;
+}
+
+.about-final .btn-light {
+    background: white;
+    color: #111;
+}
+
+
+/* =========================================================
+   ABOUT MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .about-hero {
+        min-height: 78vh;
+
+        padding: 130px 0 70px;
+    }
+
+    .identity-section,
+    .today-section,
+    .story-section,
+    .beliefs-section,
+    .vision-section,
+    .leaders-section,
+    .about-ministries,
+    .about-final {
+        padding: 85px 0;
+    }
+
+    .identity-words {
+        grid-template-columns: 1fr 1fr;
+
+        margin-top: 55px;
+    }
+
+    .identity-words > div {
+        border-bottom: 1px solid #dedbd3;
+    }
+
+    .identity-words > div:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .today-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .today-image .image-placeholder {
+        aspect-ratio: 16 / 10;
+    }
+
+    .story-item {
+        grid-template-columns:
+            40px 1fr;
+
+        gap: 20px;
+    }
+
+    .story-image {
+        grid-column: 2;
+
+        min-height: 260px;
+    }
+
+    .story-copy {
+        grid-column: 2;
+    }
+
+    .story-timeline::before {
+        left: 19px;
+    }
+
+    .vision-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .leaders-heading {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .leaders-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leader-photo {
+        aspect-ratio: 16 / 11;
+    }
+
+    .belief {
+        grid-template-columns:
+            45px 1fr;
+
+        gap: 15px;
+    }
+}
