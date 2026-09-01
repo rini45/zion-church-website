@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connect | Zion Church</title>
+
+    <meta name="description"
+          content="Connect with the Zion Church community. Find your place, serve, pray and grow together.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           CONNECT PAGE
+           ===================================================== */
+
+        .connect-page {
+            background: #f4f3ee;
+            color: #171a16;
+        }
+
+        /* ================= HERO ================= */
+
+        .connect-hero {
+            min-height: 78vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 150px 0 90px;
+
+            background: #1e261f;
+            color: white;
+        }
+
+        .connect-hero h1 {
+            max-width: 1100px;
+
+            margin-top: 20px;
+
+            font-size: clamp(5rem, 12vw, 12rem);
+
+            line-height: .82;
+            letter-spacing: -.075em;
+        }
+
+        .connect-hero p {
+            max-width: 500px;
+
+            margin-top: 35px;
+
+            color: rgba(255,255,255,.58);
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .connect-intro {
+            padding: 145px 0;
+        }
+
+        .connect-intro h2 {
+            max-width: 1100px;
+
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .connect-intro h2 span {
+            color: #858a82;
+        }
+
+
+        /* ================= GET CONNECTED ================= */
+
+        .get-connected {
+            padding: 0 0 145px;
+        }
+
+        .connected-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .connection-card {
+            min-height: 400px;
+
+            padding: 35px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background: #e1e2db;
+
+            transition:
+                transform .3s ease,
+                background .3s ease;
+        }
+
+        .connection-card:hover {
+            transform: translateY(-8px);
+
+            background: #d7d9d1;
+        }
+
+        .connection-card-number {
+            font-size: .6rem;
+
+            color: #858a82;
+
+            letter-spacing: .15em;
+        }
+
+        .connection-card h3 {
+            font-size: 2.4rem;
+
+            line-height: .95;
+
+            letter-spacing: -.04em;
+        }
+
+        .connection-card p {
+            margin-top: 15px;
+
+            font-size: .78rem;
+
+            line-height: 1.7;
+
+            color: #6f756d;
+        }
+
+        .connection-card a {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding-bottom: 7px;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.4);
+
+            font-size: .62rem;
+
+            font-weight: 700;
+
+            letter-spacing: .12em;
+        }
+
+
+        /* ================= FIND YOUR PLACE ================= */
+
+        .find-place {
+            padding: 145px 0;
+
+            background: #e1e2db;
+        }
+
+        .find-place-heading {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 60px;
+
+            margin-bottom: 70px;
+        }
+
+        .find-place-heading h2 {
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .find-place-heading p {
+            max-width: 350px;
+
+            color: #6f756d;
+
+            line-height: 1.7;
+        }
+
+        .place-list {
+            border-top:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .place-row {
+            display: grid;
+
+            grid-template-columns:
+                70px 1fr 300px 40px;
+
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 32px 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.15);
+
+            transition:
+                padding .3s ease,
+                background .3s ease;
+        }
+
+        .place-row:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            background: #f4f3ee;
+        }
+
+        .place-number {
+            font-size: .6rem;
+
+            color: #858a82;
+        }
+
+        .place-row h3 {
+            font-size: 1.8rem;
+
+            font-weight: 500;
+        }
+
+        .place-row p {
+            font-size: .75rem;
+
+            color: #6f756d;
+        }
+
+        .place-arrow {
+            font-size: 1.4rem;
+        }
+
+
+        /* ================= SERVE ================= */
+
+        .serve-section {
+            padding: 145px 0;
+
+            background: #1e261f;
+
+            color: white;
+        }
+
+        .serve-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 100px;
+        }
+
+        .serve-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .serve-heading p {
+            max-width: 360px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.55);
+
+            line-height: 1.7;
+        }
+
+        .serve-list {
+            border-top:
+                1px solid rgba(255,255,255,.15);
+        }
+
+        .serve-item {
+            padding: 27px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.15);
+        }
+
+        .serve-item h3 {
+            font-size: 1.4rem;
+
+            font-weight: 500;
+        }
+
+        .serve-item p {
+            max-width: 500px;
+
+            margin-top: 8px;
+
+            color: rgba(255,255,255,.45);
+
+            font-size: .75rem;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= PRAYER ================= */
+
+        .prayer-care {
+            padding: 145px 0;
+
+            background: #f4f3ee;
+        }
+
+        .prayer-care-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 90px;
+
+            align-items: center;
+        }
+
+        .prayer-care-content h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .prayer-care-content p {
+            max-width: 450px;
+
+            margin-top: 30px;
+
+            line-height: 1.7;
+
+            color: #6f756d;
+        }
+
+        .prayer-care-links {
+            display: flex;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+        .prayer-care-image {
+            aspect-ratio: 1 / 1;
+
+            display: grid;
+
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #737a70,
+                    #353d35
+                );
+
+            color: rgba(255,255,255,.4);
+
+            font-size: .6rem;
+
+            letter-spacing: .15em;
+        }
+
+
+        /* ================= NEW HERE ================= */
+
+        .new-here {
+            padding: 145px 0;
+
+            background: #d7d9d1;
+        }
+
+        .new-here-grid {
+            display: grid;
+
+            grid-template-columns:
+                .7fr 1.3fr;
+
+            gap: 100px;
+        }
+
+        .new-here-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .new-here-content {
+            border-top:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .new-step {
+            display: grid;
+
+            grid-template-columns:
+                60px 1fr;
+
+            gap: 25px;
+
+            padding: 28px 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .new-step span {
+            font-size: .6rem;
+
+            color: #858a82;
+        }
+
+        .new-step h3 {
+            font-size: 1.3rem;
+
+            font-weight: 500;
+        }
+
+        .new-step p {
+            margin-top: 8px;
+
+            font-size: .75rem;
+
+            color: #6f756d;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= PRAYER FORM ================= */
+
+        .prayer-form-section {
+            padding: 145px 0;
+
+            background: #e1e2db;
+        }
+
+        .prayer-form-grid {
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 100px;
+        }
+
+        .prayer-form-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .prayer-form-heading p {
+            max-width: 350px;
+
+            margin-top: 25px;
+
+            color: #6f756d;
+
+            line-height: 1.7;
+        }
+
+        .connect-form {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .connect-form input,
+        .connect-form textarea,
+        .connect-form select {
+            width: 100%;
+
+            padding: 18px 0;
+
+            border: 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.2);
+
+            outline: none;
+
+            background: transparent;
+
+            color: #171a16;
+
+            font-family: inherit;
+
+            font-size: .85rem;
+        }
+
+        .connect-form textarea {
+            min-height: 150px;
+
+            resize: vertical;
+        }
+
+        .connect-form input:focus,
+        .connect-form textarea:focus,
+        .connect-form select:focus {
+            border-bottom-color:
+                #171a16;
+        }
+
+        .connect-form .btn {
+            align-self: flex-start;
+
+            margin-top: 15px;
+        }
+
+
+        /* ================= FINAL CTA ================= */
+
+        .connect-cta {
+            padding: 150px 0;
+
+            text-align: center;
+
+            background: #1e261f;
+
+            color: white;
+        }
+
+        .connect-cta h2 {
+            max-width: 950px;
+
+            margin: auto;
+
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .86;
+
+            letter-spacing: -.07em;
+        }
+
+        .connect-cta p {
+            max-width: 500px;
+
+            margin: 30px auto 45px;
+
+            color: rgba(255,255,255,.55);
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:760px) {
+
+            .connect-hero {
+                min-height: 78vh;
+
+                padding: 130px 0 70px;
+            }
+
+            .connect-hero h1 {
+                font-size:
+                    clamp(
+                        4.5rem,
+                        18vw,
+                        7rem
+                    );
+            }
+
+            .connect-intro,
+            .get-connected,
+            .find-place,
+            .serve-section,
+            .prayer-care,
+            .new-here,
+            .prayer-form-section,
+            .connect-cta {
+                padding: 90px 0;
+            }
+
+            .connected-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .find-place-heading {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .place-row {
+                grid-template-columns:
+                    45px 1fr 25px;
+
+                gap: 15px;
+            }
+
+            .place-row p {
+                display: none;
+            }
+
+            .serve-grid,
+            .prayer-care-grid,
+            .new-here-grid,
+            .prayer-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .prayer-care-image {
+                order: -1;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body class="connect-page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">Z</span>
+
+                <span class="logo-text">
+                    <strong>ZION</strong>
+                    <small>CHURCH</small>
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ministries.html">
+                    Ministries
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="sermons.html">
+                    Sermons
+                </a>
+
+                <a href="resources.html">
+                    Resources
+                </a>
+
+                <a href="connect.html"
+                   class="active">
+                    Connect
+                </a>
+
+            </nav>
+
+
+            <a
+                href="index.html#watch-live"
+                class="nav-live-btn">
+                Watch Live
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="connect-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    CONNECT
+                </p>
+
+                <h1>
+                    You don't have<br>
+                    to do life alone.
+                </h1>
+
+                <p>
+                    Church is more than a Sunday gathering.
+                    Find community, discover your place
+                    and grow with us.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="connect-intro">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    COMMUNITY
+                </p>
+
+                <h2>
+                    Find your people.
+                    <span>Find your place.</span>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= GET CONNECTED ================= -->
+
+        <section class="get-connected">
+
+            <div class="container">
+
+                <div class="connected-grid">
+
+
+                    <article class="connection-card">
+
+                        <span class="connection-card-number">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Join Our
+                                Community
+                            </h3>
+
+                            <p>
+                                Get to know the people of Zion
+                                and become part of our church
+                                family.
+                            </p>
+
+                            <a href="#">
+                                GET CONNECTED →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="connection-card">
+
+                        <span class="connection-card-number">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Small
+                                Groups
+                            </h3>
+
+                            <p>
+                                Build meaningful relationships,
+                                study God's Word and grow
+                                together.
+                            </p>
+
+                            <a href="#">
+                                FIND A GROUP →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="connection-card">
+
+                        <span class="connection-card-number">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                New
+                                Here?
+                            </h3>
+
+                            <p>
+                                Learn what to expect and
+                                discover how you can get
+                                involved.
+                            </p>
+
+                            <a href="#new-here">
+                                START HERE →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FIND YOUR PLACE ================= -->
+
+        <section class="find-place">
+
+            <div class="container">
+
+                <div class="find-place-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            FIND YOUR PLACE
+                        </p>
+
+                        <h2>
+                            There's room
+                            for you.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Discover a ministry where you can
+                        build relationships, serve others
+                        and grow in your walk with Christ.
+                    </p>
+
+                </div>
+
+
+                <div class="place-list">
+
+
+                    <a href="ministries.html"
+                       class="place-row">
+
+                        <span class="place-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Ladies Ministry
+                        </h3>
+
+                        <p>
+                            Fellowship, prayer and
+                            growing together.
+                        </p>
+
+                        <span class="place-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="ministries.html"
+                       class="place-row">
+
+                        <span class="place-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Youth Ministry
+                        </h3>
+
+                        <p>
+                            A generation pursuing
+                            Jesus together.
+                        </p>
+
+                        <span class="place-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="ministries.html"
+                       class="place-row">
+
+                        <span class="place-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Sunday School
+                        </h3>
+
+                        <p>
+                            Helping the next generation
+                            know God's Word.
+                        </p>
+
+                        <span class="place-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="ministries.html"
+                       class="place-row">
+
+                        <span class="place-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Prayer Ministry
+                        </h3>
+
+                        <p>
+                            Seeking God together
+                            through prayer.
+                        </p>
+
+                        <span class="place-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVE ================= -->
+
+        <section class="serve-section">
+
+            <div class="container serve-grid">
+
+
+                <div class="serve-heading">
+
+                    <p class="about-kicker">
+                        SERVE
+                    </p>
+
+                    <h2>
+                        There's
+                        something
+                        you can do.
+                    </h2>
+
+                    <p>
+                        Every gift matters. Find a place
+                        where you can use what God has given
+                        you to serve others.
+                    </p>
+
+                </div>
+
+
+                <div class="serve-list">
+
+
+                    <div class="serve-item">
+
+                        <h3>
+                            Worship
+                        </h3>
+
+                        <p>
+                            Use your musical gifts to help
+                            lead the church into worship.
+                        </p>
+
+                    </div>
+
+
+                    <div class="serve-item">
+
+                        <h3>
+                            Media
+                        </h3>
+
+                        <p>
+                            Help communicate the Gospel
+                            through photography, design,
+                            video and technology.
+                        </p>
+
+                    </div>
+
+
+                    <div class="serve-item">
+
+                        <h3>
+                            Kids & Sunday School
+                        </h3>
+
+                        <p>
+                            Invest in the next generation
+                            through teaching and care.
+                        </p>
+
+                    </div>
+
+
+                    <div class="serve-item">
+
+                        <h3>
+                            Hospitality
+                        </h3>
+
+                        <p>
+                            Help create a welcoming
+                            environment for everyone
+                            who walks through our doors.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRAYER & CARE ================= -->
+
+        <section class="prayer-care">
+
+            <div class="container prayer-care-grid">
+
+
+                <div class="prayer-care-image">
+                    PRAYER & CARE
+                </div>
+
+
+                <div class="prayer-care-content">
+
+                    <p class="eyebrow">
+                        PRAYER & CARE
+                    </p>
+
+                    <h2>
+                        You don't
+                        have to carry
+                        it alone.
+                    </h2>
+
+                    <p>
+                        If you need prayer, encouragement
+                        or someone to walk alongside you,
+                        we'd love to hear from you.
+                    </p>
+
+
+                    <div class="prayer-care-links">
+
+                        <a
+                            href="#prayer-form"
+                            class="btn btn-primary">
+                            REQUEST PRAYER
+                        </a>
+
+                        <a
+                            href="contact.html"
+                            class="btn btn-secondary">
+                            PASTORAL CARE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NEW HERE ================= -->
+
+        <section
+            class="new-here"
+            id="new-here">
+
+            <div class="container new-here-grid">
+
+
+                <div class="new-here-heading">
+
+                    <p class="eyebrow">
+                        NEW TO ZION?
+                    </p>
+
+                    <h2>
+                        Start
+                        here.
+                    </h2>
+
+                </div>
+
+
+                <div class="new-here-content">
+
+
+                    <div class="new-step">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Come as you are.
+                            </h3>
+
+                            <p>
+                                You don't need to know
+                                everything before you walk
+                                through our doors.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="new-step">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Meet someone.
+                            </h3>
+
+                            <p>
+                                Our church family would love
+                                to welcome you and help you
+                                find your way around.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="new-step">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Find your place.
+                            </h3>
+
+                            <p>
+                                Explore a ministry, group or
+                                place to serve.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="new-step">
+
+                        <span>
+                            04
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Grow with us.
+                            </h3>
+
+                            <p>
+                                Follow Jesus together through
+                                worship, God's Word and
+                                community.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRAYER FORM ================= -->
+
+        <section
+            class="prayer-form-section"
+            id="prayer-form">
+
+            <div class="container prayer-form-grid">
+
+
+                <div class="prayer-form-heading">
+
+                    <p class="eyebrow">
+                        PRAYER REQUEST
+                    </p>
+
+                    <h2>
+                        We'd be
+                        honoured
+                        to pray.
+                    </h2>
+
+                    <p>
+                        Share your prayer request with us.
+                        Your request will be treated with
+                        care and confidentiality.
+                    </p>
+
+                </div>
+
+
+                <form
+                    class="connect-form"
+                    action="#"
+                    method="POST">
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        required>
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email address">
+
+                    <select
+                        name="request-type"
+                        required>
+
+                        <option value="">
+                            What can we pray for?
+                        </option>
+
+                        <option value="personal">
+                            Personal
+                        </option>
+
+                        <option value="family">
+                            Family
+                        </option>
+
+                        <option value="health">
+                            Health
+                        </option>
+
+                        <option value="work">
+                            Work / Studies
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                    <textarea
+                        name="message"
+                        placeholder="Your prayer request..."
+                        required></textarea>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+                        SEND PRAYER REQUEST
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="connect-cta">
+
+            <div class="container">
+
+                <p class="about-kicker">
+                    ZION CHURCH
+                </p>
+
+                <h2>
+                    We'd love
+                    to meet you.
+                </h2>
+
+                <p>
+                    Come worship with us, meet our
+                    community and find your place.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="btn btn-light">
+                    PLAN YOUR VISIT
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="logo footer-logo">
+
+                    <span class="logo-mark">
+                        Z
+                    </span>
+
+                    <span class="logo-text">
+                        <strong>ZION</strong>
+                        <small>CHURCH</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    A community growing together
+                    in Christ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ministries.html">
+                    Ministries
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="sermons.html">
+                    Sermons
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="connect.html">
+                    Connect
+                </a>
+
+                <a href="resources.html">
+                    Resources
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Visit
+                </h4>
+
+                <p>
+                    Zion Church<br>
+                    Bengaluru, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                Zion Church
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
