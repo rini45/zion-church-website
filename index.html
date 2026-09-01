@@ -1,754 +1,184 @@
-<!DOCTYPE html>
+ 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Zion Church | Welcome Home</title>
-
-    <meta name="description" content="Welcome to Zion Church. A community growing together in Christ through worship, prayer, fellowship and the Word.">
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zion Church | Welcome Home</title>
+  <meta name="description" content="Zion Church — a community growing in Christ through worship, the Word, prayer and fellowship.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">Z</span>
+      <span><strong>ZION</strong><small>CHURCH</small></span>
+    </a>
 
-    <!-- ================================
-         HEADER / NAVIGATION
-    ================================= -->
+    <nav class="main-nav" id="mainNav">
+      <a class="active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="ministries.html">Ministries</a>
+      <a href="events.html">Events</a>
+      <a href="sermons.html">Sermons</a>
+      <a href="resources.html">Resources</a>
+      <a href="connect.html">Connect</a>
+    </nav>
 
-    <header class="site-header">
+    <a class="live-btn" href="#watch-live"><span></span> Watch Live</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  </div>
+</header>
 
-        <div class="container nav-container">
-
-            <a href="index.html" class="logo">
-                <span class="logo-mark">Z</span>
-                <span class="logo-text">
-                    <strong>ZION</strong>
-                    <small>CHURCH</small>
-                </span>
-            </a>
-
-            <nav class="main-nav">
-
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="ministries.html">Ministries</a>
-                <a href="events.html">Events</a>
-                <a href="sermons.html">Sermons</a>
-                <a href="resources.html">Resources</a>
-                <a href="connect.html">Connect</a>
-
-            </nav>
-
-            <a href="#watch-live" class="nav-live-btn">
-                Watch Live
-            </a>
-
-            <button class="menu-toggle" aria-label="Open navigation">
-                ☰
-            </button>
-
+<main>
+  <section class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">WELCOME TO ZION</p>
+        <h1>Come as you are.<br><em>Find your home.</em></h1>
+        <p class="hero-text">A church family learning to know Christ, follow His Word and walk faithfully together.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="contact.html">Plan Your Visit <span>↗</span></a>
+          <a class="text-btn light" href="#watch-live">Watch Online <span>→</span></a>
         </div>
-
-    </header>
-
-
-    <main>
-
-        <!-- ================================
-             HERO
-        ================================= -->
-
-        <section class="hero">
-
-            <div class="hero-overlay"></div>
-
-            <div class="container hero-content">
-
-                <p class="eyebrow">
-                    WELCOME TO ZION
-                </p>
-
-                <h1>
-                    A Place to Know Christ.
-                    <br>
-                    A People to Walk With.
-                </h1>
-
-                <p class="hero-description">
-                    We are a community of believers growing together
-                    in the Word, worship, prayer and the love of Christ.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="contact.html" class="btn btn-primary">
-                        Plan Your Visit
-                    </a>
-
-                    <a href="about.html" class="btn btn-secondary">
-                        Discover Zion
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-scroll">
-                <span>Scroll to explore</span>
-                <span class="scroll-line"></span>
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             SERVICE TIMES
-        ================================= -->
-
-        <section class="service-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        JOIN US
-                    </p>
-
-                    <h2>
-                        There is a place for you here.
-                    </h2>
-
-                </div>
-
-
-                <div class="service-grid">
-
-                    <div class="service-item">
-
-                        <span class="service-number">01</span>
-
-                        <div>
-                            <h3>Sunday Worship</h3>
-                            <p>9:00 AM</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="service-item">
-
-                        <span class="service-number">02</span>
-
-                        <div>
-                            <h3>Sunday School</h3>
-                            <p>8:30 AM</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="service-item">
-
-                        <span class="service-number">03</span>
-
-                        <div>
-                            <h3>Midweek Service</h3>
-                            <p>7:00 PM</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             LIVE SECTION
-        ================================= -->
-
-        <section class="live-section" id="watch-live">
-
-            <div class="container">
-
-                <div class="live-header">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            WATCH & WORSHIP
-                        </p>
-
-                        <h2>
-                            Join us wherever you are.
-                        </h2>
-
-                    </div>
-
-                    <div class="live-status">
-                        <span class="live-dot"></span>
-                        Online
-                    </div>
-
-                </div>
-
-
-                <div class="video-placeholder">
-
-                    <div class="video-content">
-
-                        <span class="play-button">▶</span>
-
-                        <h3>
-                            Zion Church Live
-                        </h3>
-
-                        <p>
-                            Our next live service will appear here.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             EVENTS
-        ================================= -->
-
-        <section class="events-section">
-
-            <div class="container">
-
-                <div class="section-top">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            WHAT'S HAPPENING
-                        </p>
-
-                        <h2>
-                            Upcoming Events
-                        </h2>
-
-                    </div>
-
-                    <a href="events.html" class="text-link">
-                        View all events →
-                    </a>
-
-                </div>
-
-
-                <div class="event-grid">
-
-                    <article class="event-card">
-
-                        <div class="event-date">
-                            <strong>20</strong>
-                            <span>SEP</span>
-                        </div>
-
-                        <div class="event-info">
-
-                            <span class="event-category">
-                                SPECIAL EVENT
-                            </span>
-
-                            <h3>
-                                Church Anniversary
-                            </h3>
-
-                            <p>
-                                Sunday · 9:00 AM
-                            </p>
-
-                            <a href="events.html">
-                                View details →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="event-card">
-
-                        <div class="event-date">
-                            <strong>25</strong>
-                            <span>SEP</span>
-                        </div>
-
-                        <div class="event-info">
-
-                            <span class="event-category">
-                                PRAYER
-                            </span>
-
-                            <h3>
-                                Night of Prayer
-                            </h3>
-
-                            <p>
-                                Friday · 7:00 PM
-                            </p>
-
-                            <a href="events.html">
-                                View details →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="event-card">
-
-                        <div class="event-date">
-                            <strong>28</strong>
-                            <span>SEP</span>
-                        </div>
-
-                        <div class="event-info">
-
-                            <span class="event-category">
-                                YOUTH
-                            </span>
-
-                            <h3>
-                                Youth Fellowship
-                            </h3>
-
-                            <p>
-                                Sunday · 5:00 PM
-                            </p>
-
-                            <a href="events.html">
-                                View details →
-                            </a>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             SERMONS
-        ================================= -->
-
-        <section class="sermons-section">
-
-            <div class="container">
-
-                <div class="section-top">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            THE WORD
-                        </p>
-
-                        <h2>
-                            Latest Sermons
-                        </h2>
-
-                    </div>
-
-                    <a href="sermons.html" class="text-link">
-                        Explore sermons →
-                    </a>
-
-                </div>
-
-
-                <div class="sermon-grid">
-
-                    <article class="sermon-card">
-
-                        <div class="sermon-thumbnail">
-
-                            <span class="sermon-play">
-                                ▶
-                            </span>
-
-                        </div>
-
-                        <div class="sermon-info">
-
-                            <span>
-                                SUNDAY SERVICE
-                            </span>
-
-                            <h3>
-                                The Power of Faith
-                            </h3>
-
-                            <p>
-                                Pastor Name · September 2026
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="sermon-card">
-
-                        <div class="sermon-thumbnail">
-
-                            <span class="sermon-play">
-                                ▶
-                            </span>
-
-                        </div>
-
-                        <div class="sermon-info">
-
-                            <span>
-                                SUNDAY SERVICE
-                            </span>
-
-                            <h3>
-                                Walking With God
-                            </h3>
-
-                            <p>
-                                Pastor Name · September 2026
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="sermon-card">
-
-                        <div class="sermon-thumbnail">
-
-                            <span class="sermon-play">
-                                ▶
-                            </span>
-
-                        </div>
-
-                        <div class="sermon-info">
-
-                            <span>
-                                SUNDAY SERVICE
-                            </span>
-
-                            <h3>
-                                Grace That Transforms
-                            </h3>
-
-                            <p>
-                                Pastor Name · August 2026
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             TESTIMONY
-        ================================= -->
-
-        <section class="testimony-section">
-
-            <div class="container testimony-container">
-
-                <p class="eyebrow">
-                    GOD IS STILL WORKING
-                </p>
-
-                <blockquote>
-                    “What God has done in my life
-                    is more than I could have imagined.”
-                </blockquote>
-
-                <p class="testimony-author">
-                    — A Zion Testimony
-                </p>
-
-                <a href="contact.html" class="text-link">
-                    Share your testimony →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             PRAYER
-        ================================= -->
-
-        <section class="prayer-section">
-
-            <div class="container prayer-container">
-
-                <div>
-
-                    <p class="eyebrow">
-                        NEED PRAYER?
-                    </p>
-
-                    <h2>
-                        You don't have to carry it alone.
-                    </h2>
-
-                </div>
-
-                <div>
-
-                    <p>
-                        Whatever you're walking through,
-                        we'd be honoured to pray with you.
-                    </p>
-
-                    <a href="connect.html" class="btn btn-primary">
-                        Submit a Prayer Request
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             CONNECT
-        ================================= -->
-
-        <section class="connect-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        FIND YOUR PLACE
-                    </p>
-
-                    <h2>
-                        Grow. Serve. Belong.
-                    </h2>
-
-                </div>
-
-
-                <div class="connect-grid">
-
-                    <a href="connect.html" class="connect-card">
-
-                        <span>01</span>
-
-                        <h3>
-                            Get Connected
-                        </h3>
-
-                        <p>
-                            Find community and grow
-                            together in Christ.
-                        </p>
-
-                        <strong>
-                            Explore →
-                        </strong>
-
-                    </a>
-
-
-                    <a href="ministries.html" class="connect-card">
-
-                        <span>02</span>
-
-                        <h3>
-                            Find a Ministry
-                        </h3>
-
-                        <p>
-                            Discover a ministry where
-                            you can belong and serve.
-                        </p>
-
-                        <strong>
-                            Explore →
-                        </strong>
-
-                    </a>
-
-
-                    <a href="connect.html" class="connect-card">
-
-                        <span>03</span>
-
-                        <h3>
-                            Serve
-                        </h3>
-
-                        <p>
-                            Use your gifts to serve
-                            God's people and community.
-                        </p>
-
-                        <strong>
-                            Get Involved →
-                        </strong>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================================
-             FINAL CTA
-        ================================= -->
-
-        <section class="final-cta">
-
-            <div class="container">
-
-                <p class="eyebrow">
-                    COME AS YOU ARE
-                </p>
-
-                <h2>
-                    There is a place
-                    <br>
-                    for you here.
-                </h2>
-
-                <a href="contact.html" class="btn btn-light">
-                    Plan Your Visit
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ================================
-         FOOTER
-    ================================= -->
-
-    <footer class="site-footer">
-
-        <div class="container footer-grid">
-
-            <div class="footer-brand">
-
-                <a href="index.html" class="logo footer-logo">
-
-                    <span class="logo-mark">Z</span>
-
-                    <span class="logo-text">
-                        <strong>ZION</strong>
-                        <small>CHURCH</small>
-                    </span>
-
-                </a>
-
-                <p>
-                    A community growing together
-                    in Christ, faith and fellowship.
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Explore</h4>
-
-                <a href="about.html">About</a>
-                <a href="ministries.html">Ministries</a>
-                <a href="events.html">Events</a>
-                <a href="sermons.html">Sermons</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Connect</h4>
-
-                <a href="connect.html">Get Connected</a>
-                <a href="connect.html">Prayer</a>
-                <a href="connect.html">Serve</a>
-                <a href="contact.html">Contact</a>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h4>Visit Us</h4>
-
-                <p>
-                    Zion Church
-                    <br>
-                    Bengaluru, India
-                </p>
-
-                <a href="contact.html">
-                    View locations →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="container footer-bottom">
-
-            <p>
-                © 2026 Zion Church. All rights reserved.
-            </p>
-
-            <div>
-
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <script src="js/script.js"></script>
-
+      </div>
+      <div class="hero-bottom">
+        <div><span>THIS SUNDAY</span><strong>Worship · 9:00 AM</strong></div>
+        <div><span>LOCATION</span><strong>Bengaluru, India</strong></div>
+        <a href="contact.html">Get directions <span>↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="welcome section">
+    <div class="section-grid">
+      <div>
+        <p class="kicker dark">A PLACE TO BELONG</p>
+        <h2>Church is more than a building.<br><em>It is people.</em></h2>
+      </div>
+      <div class="welcome-copy">
+        <p>Zion is a community of believers from different walks of life, gathered around Jesus. We worship together, learn the Word, pray for one another and make room for people to discover the life God has called them to.</p>
+        <a class="text-btn dark" href="about.html">Discover Zion <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-strip">
+    <div class="section-grid service-grid">
+      <div>
+        <p class="kicker dark">JOIN US</p>
+        <h2>Make Sunday<br><em>your Sunday.</em></h2>
+      </div>
+      <div class="service-list">
+        <article><span>01</span><div><small>SUNDAY</small><h3>Worship Service</h3><p>9:00 AM</p></div></article>
+        <article><span>02</span><div><small>SUNDAY</small><h3>Sunday School</h3><p>8:30 AM</p></div></article>
+        <article><span>03</span><div><small>MIDWEEK</small><h3>Prayer & Word</h3><p>7:00 PM</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="watch section" id="watch-live">
+    <div class="watch-head">
+      <div><p class="kicker dark">WATCH & WORSHIP</p><h2>Right where<br><em>you are.</em></h2></div>
+      <div class="watch-note"><span class="live-pulse"></span><strong>Online</strong><p>Our latest service and live stream will appear here.</p></div>
+    </div>
+    <div class="video-card">
+      <div class="video-bg"></div>
+      <div class="video-overlay"></div>
+      <div class="video-center">
+        <button class="play" aria-label="Play video">▶</button>
+        <p>WATCH ZION CHURCH</p>
+        <h3>Worship. Word. Community.</h3>
+      </div>
+      <div class="video-meta"><span>LIVE / SUNDAY SERVICE</span><span>WATCH ON YOUTUBE ↗</span></div>
+    </div>
+  </section>
+
+  <section class="events section">
+    <div class="section-top">
+      <div><p class="kicker dark">WHAT'S HAPPENING</p><h2>Come be part<br><em>of the story.</em></h2></div>
+      <a class="text-btn dark" href="events.html">View all events <span>→</span></a>
+    </div>
+    <div class="event-cards">
+      <article class="event-card featured">
+        <div class="event-image event-one"></div>
+        <div class="event-body"><span class="date">20 <small>SEP</small></span><div><small>SPECIAL EVENT</small><h3>Church Anniversary</h3><p>Sunday · 9:00 AM</p><a href="events.html">View details →</a></div></div>
+      </article>
+      <article class="event-card">
+        <div class="event-image event-two"></div>
+        <div class="event-body"><span class="date">25 <small>SEP</small></span><div><small>PRAYER</small><h3>Night of Prayer</h3><p>Friday · 7:00 PM</p><a href="events.html">View details →</a></div></div>
+      </article>
+      <article class="event-card">
+        <div class="event-image event-three"></div>
+        <div class="event-body"><span class="date">28 <small>SEP</small></span><div><small>YOUTH</small><h3>Youth Fellowship</h3><p>Sunday · 5:00 PM</p><a href="events.html">View details →</a></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sermons section">
+    <div class="section-top">
+      <div><p class="kicker dark">THE WORD</p><h2>Take the message<br><em>with you.</em></h2></div>
+      <a class="text-btn dark" href="sermons.html">Explore sermons <span>→</span></a>
+    </div>
+    <div class="sermon-grid">
+      <article class="sermon-card large"><div class="sermon-thumb thumb-one"><span class="play small">▶</span></div><div><small>SUNDAY SERVICE · SEPTEMBER 2026</small><h3>The Power of Faith</h3><p>Pastor Name</p></div></article>
+      <article class="sermon-card"><div class="sermon-thumb thumb-two"><span class="play small">▶</span></div><div><small>SUNDAY SERVICE · SEPTEMBER 2026</small><h3>Walking With God</h3><p>Pastor Name</p></div></article>
+      <article class="sermon-card"><div class="sermon-thumb thumb-three"><span class="play small">▶</span></div><div><small>SUNDAY SERVICE · AUGUST 2026</small><h3>Grace That Transforms</h3><p>Pastor Name</p></div></article>
+    </div>
+  </section>
+
+  <section class="ministries">
+    <div class="section-grid ministry-grid">
+      <div><p class="kicker">FIND YOUR PLACE</p><h2>Grow.<br>Serve.<br><em>Belong.</em></h2></div>
+      <div class="ministry-list">
+        <a href="ministries.html"><span>01</span><strong>Youth Ministry</strong><i>↗</i></a>
+        <a href="ministries.html"><span>02</span><strong>Sunday School</strong><i>↗</i></a>
+        <a href="ministries.html"><span>03</span><strong>Ladies Ministry</strong><i>↗</i></a>
+        <a href="ministries.html"><span>04</span><strong>Prayer Ministry</strong><i>↗</i></a>
+        <a href="ministries.html"><span>05</span><strong>Bible Study Groups</strong><i>↗</i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimony section">
+    <p class="kicker dark">GOD IS STILL WORKING</p>
+    <blockquote>“I came looking for a church.<br><em>I found a family.</em>”</blockquote>
+    <div class="testimony-bottom"><p>A story from the Zion family.</p><a class="text-btn dark" href="contact.html">Share your testimony <span>→</span></a></div>
+  </section>
+
+  <section class="prayer">
+    <div class="prayer-inner">
+      <div><p class="kicker">NEED PRAYER?</p><h2>You don't have to<br><em>carry it alone.</em></h2></div>
+      <div><p>Whatever you're walking through, we'd be honoured to pray with you.</p><a class="btn btn-light" href="connect.html">Send a Prayer Request <span>↗</span></a></div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div><p class="kicker">COME AS YOU ARE</p><h2>We'd love<br><em>to meet you.</em></h2><a class="btn btn-light" href="contact.html">Plan Your Visit <span>↗</span></a></div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-top">
+    <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">Z</span><span><strong>ZION</strong><small>CHURCH</small></span></a><p>A community growing together in Christ, faith and fellowship.</p></div>
+    <div><small>EXPLORE</small><a href="about.html">About</a><a href="ministries.html">Ministries</a><a href="events.html">Events</a><a href="sermons.html">Sermons</a></div>
+    <div><small>CONNECT</small><a href="connect.html">Get Connected</a><a href="connect.html">Prayer</a><a href="connect.html">Serve</a><a href="contact.html">Contact</a></div>
+    <div><small>VISIT</small><p>Zion Church<br>Bengaluru, India</p><a href="contact.html">View locations →</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 Zion Church</span><span>Built with faith · Privacy</span></div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  toggle?.addEventListener('click', () => nav.classList.toggle('open'));
+</script>
 </body>
 </html>
