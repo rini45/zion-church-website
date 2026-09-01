@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resources | Zion Church</title>
+
+    <meta name="description"
+          content="Resources from Zion Church to help you grow in faith, prayer and God's Word.">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           RESOURCES PAGE
+           ===================================================== */
+
+        .resources-page {
+            background: #f4f3ee;
+            color: #171a16;
+        }
+
+        /* ================= HERO ================= */
+
+        .resources-hero {
+            min-height: 78vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 150px 0 90px;
+
+            background: #1e261f;
+            color: #fff;
+        }
+
+        .resources-hero h1 {
+            max-width: 1100px;
+
+            margin-top: 20px;
+
+            font-size: clamp(5rem, 12vw, 12rem);
+
+            line-height: .82;
+            letter-spacing: -.075em;
+        }
+
+        .resources-hero p {
+            max-width: 500px;
+
+            margin-top: 35px;
+
+            color: rgba(255,255,255,.58);
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .resources-intro {
+            padding: 145px 0;
+        }
+
+        .resources-intro h2 {
+            max-width: 1050px;
+
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .resources-intro h2 span {
+            color: #858a82;
+        }
+
+
+        /* ================= FEATURED ================= */
+
+        .featured-resource {
+            padding: 0 0 145px;
+        }
+
+        .resource-feature-grid {
+            display: grid;
+
+            grid-template-columns: 1.15fr .85fr;
+
+            min-height: 600px;
+        }
+
+        .resource-feature-image {
+            display: grid;
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #626960,
+                    #293129
+                );
+
+            color: rgba(255,255,255,.4);
+
+            font-size: .6rem;
+            letter-spacing: .15em;
+        }
+
+        .resource-feature-content {
+            padding: 65px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background: #e1e2db;
+        }
+
+        .resource-feature-content h2 {
+            margin-top: 22px;
+
+            font-size: clamp(3.5rem, 6vw, 6rem);
+
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .resource-feature-content p {
+            max-width: 430px;
+
+            margin-top: 30px;
+
+            line-height: 1.7;
+        }
+
+        .resource-feature-content .btn {
+            align-self: flex-start;
+
+            margin-top: 35px;
+        }
+
+
+        /* ================= RESOURCE CATEGORIES ================= */
+
+        .resource-library {
+            padding: 140px 0 160px;
+
+            background: #e1e2db;
+        }
+
+        .resource-library-heading {
+            max-width: 800px;
+
+            margin-bottom: 70px;
+        }
+
+        .resource-library-heading h2 {
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .87;
+            letter-spacing: -.07em;
+        }
+
+        .resource-list {
+            border-top:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .resource-row {
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr 300px 40px;
+
+            gap: 30px;
+
+            align-items: center;
+
+            padding: 35px 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.15);
+
+            transition:
+                padding .3s ease,
+                background .3s ease;
+        }
+
+        .resource-row:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            background: #f4f3ee;
+        }
+
+        .resource-number {
+            font-size: .6rem;
+
+            color: #858a82;
+        }
+
+        .resource-row h3 {
+            font-size: 1.8rem;
+
+            font-weight: 500;
+        }
+
+        .resource-row p {
+            font-size: .76rem;
+
+            line-height: 1.6;
+        }
+
+        .resource-arrow {
+            font-size: 1.4rem;
+        }
+
+
+        /* ================= DEVOTIONALS ================= */
+
+        .devotionals-section {
+            padding: 145px 0;
+
+            background: #f4f3ee;
+        }
+
+        .devotional-heading {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 50px;
+
+            margin-bottom: 65px;
+        }
+
+        .devotional-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .88;
+            letter-spacing: -.07em;
+        }
+
+        .devotional-heading p {
+            max-width: 350px;
+
+            line-height: 1.7;
+        }
+
+        .devotional-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .devotional-card {
+            min-height: 330px;
+
+            padding: 32px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            background: #e1e2db;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .devotional-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .devotional-card span {
+            font-size: .6rem;
+
+            color: #858a82;
+
+            letter-spacing: .15em;
+        }
+
+        .devotional-card h3 {
+            margin-top: auto;
+
+            padding-top: 80px;
+
+            font-size: 2rem;
+
+            line-height: 1;
+        }
+
+        .devotional-card p {
+            margin-top: 12px;
+
+            font-size: .78rem;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= PRAYER ================= */
+
+        .prayer-resources {
+            padding: 145px 0;
+
+            background: #1e261f;
+
+            color: white;
+        }
+
+        .prayer-resource-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 100px;
+
+            align-items: center;
+        }
+
+        .prayer-resource-content h2 {
+            max-width: 750px;
+
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+            letter-spacing: -.07em;
+        }
+
+        .prayer-resource-content p {
+            max-width: 450px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.55);
+
+            line-height: 1.7;
+        }
+
+        .prayer-resource-content a {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding-bottom: 8px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.5);
+
+            color: white;
+
+            font-size: .65rem;
+
+            font-weight: 700;
+
+            letter-spacing: .13em;
+        }
+
+        .prayer-resource-image {
+            aspect-ratio: 1 / 1;
+
+            display: grid;
+            place-items: center;
+
+            background: #343b34;
+
+            color: rgba(255,255,255,.35);
+
+            font-size: .6rem;
+
+            letter-spacing: .15em;
+        }
+
+
+        /* ================= DOWNLOADS ================= */
+
+        .downloads-section {
+            padding: 145px 0;
+
+            background: #d7d9d1;
+        }
+
+        .downloads-heading {
+            max-width: 750px;
+
+            margin-bottom: 65px;
+        }
+
+        .downloads-heading h2 {
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .87;
+            letter-spacing: -.07em;
+        }
+
+        .download-list {
+            border-top:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .download-row {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+
+            padding: 25px 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .download-row strong {
+            font-size: .95rem;
+
+            font-weight: 500;
+        }
+
+        .download-row span {
+            font-size: .62rem;
+
+            color: #777d75;
+
+            letter-spacing: .1em;
+        }
+
+        .download-row a {
+            font-size: 1.3rem;
+        }
+
+
+        /* ================= QUESTIONS ================= */
+
+        .questions-section {
+            padding: 145px 0;
+
+            background: #f4f3ee;
+        }
+
+        .questions-layout {
+            display: grid;
+
+            grid-template-columns:
+                .8fr 1.2fr;
+
+            gap: 100px;
+        }
+
+        .questions-heading h2 {
+            font-size: clamp(4rem, 7vw, 7rem);
+
+            line-height: .87;
+            letter-spacing: -.07em;
+        }
+
+        .questions-heading p {
+            max-width: 350px;
+
+            margin-top: 25px;
+
+            line-height: 1.7;
+        }
+
+        .faq-list {
+            border-top:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .faq-item {
+            border-bottom:
+                1px solid rgba(0,0,0,.15);
+        }
+
+        .faq-question {
+            width: 100%;
+
+            padding: 25px 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+
+            border: 0;
+
+            background: transparent;
+
+            text-align: left;
+
+            color: #171a16;
+
+            font-size: .95rem;
+
+            cursor: pointer;
+        }
+
+        .faq-icon {
+            font-size: 1.3rem;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+
+            overflow: hidden;
+
+            transition:
+                max-height .4s ease;
+        }
+
+        .faq-answer p {
+            max-width: 650px;
+
+            padding:
+                0 40px 25px 0;
+
+            font-size: .8rem;
+
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+
+
+        /* ================= CTA ================= */
+
+        .resources-cta {
+            padding: 150px 0;
+
+            text-align: center;
+
+            background: #e1e2db;
+        }
+
+        .resources-cta h2 {
+            max-width: 950px;
+
+            margin: auto;
+
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            line-height: .86;
+
+            letter-spacing: -.07em;
+        }
+
+        .resources-cta p {
+            max-width: 500px;
+
+            margin: 30px auto 45px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:760px) {
+
+            .resources-hero {
+                min-height: 78vh;
+
+                padding: 130px 0 70px;
+            }
+
+            .resources-hero h1 {
+                font-size:
+                    clamp(
+                        4.5rem,
+                        18vw,
+                        7rem
+                    );
+            }
+
+            .resources-intro,
+            .featured-resource,
+            .resource-library,
+            .devotionals-section,
+            .prayer-resources,
+            .downloads-section,
+            .questions-section,
+            .resources-cta {
+                padding: 90px 0;
+            }
+
+            .resource-feature-grid,
+            .prayer-resource-grid,
+            .questions-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-feature-content {
+                padding: 45px 25px;
+            }
+
+            .resource-row {
+                grid-template-columns:
+                    45px 1fr 25px;
+
+                gap: 15px;
+            }
+
+            .resource-row p {
+                display: none;
+            }
+
+            .devotional-heading {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .devotional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .prayer-resource-image {
+                order: -1;
+            }
+
+            .download-row {
+                align-items: flex-start;
+            }
+
+            .download-row span {
+                display: none;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body class="resources-page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">Z</span>
+
+                <span class="logo-text">
+                    <strong>ZION</strong>
+                    <small>CHURCH</small>
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+
+                <a href="about.html">About</a>
+
+                <a href="ministries.html">Ministries</a>
+
+                <a href="events.html">Events</a>
+
+                <a href="sermons.html">Sermons</a>
+
+                <a href="resources.html"
+                   class="active">
+                    Resources
+                </a>
+
+                <a href="connect.html">Connect</a>
+
+            </nav>
+
+
+            <a
+                href="index.html#watch-live"
+                class="nav-live-btn">
+                Watch Live
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="resources-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    RESOURCES
+                </p>
+
+                <h1>
+                    Grow beyond<br>
+                    Sunday.
+                </h1>
+
+                <p>
+                    Tools, teachings and resources to help
+                    you grow deeper in God's Word and
+                    stronger in faith.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="resources-intro">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    KEEP GROWING
+                </p>
+
+                <h2>
+                    Faith grows
+                    <span>when we keep seeking.</span>
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURED ================= -->
+
+        <section class="featured-resource">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    FEATURED RESOURCE
+                </p>
+
+
+                <div class="resource-feature-grid">
+
+                    <div class="resource-feature-image">
+                        RESOURCE IMAGE
+                    </div>
+
+
+                    <div class="resource-feature-content">
+
+                        <span class="eyebrow">
+                            THIS MONTH
+                        </span>
+
+                        <h2>
+                            Walking
+                            With Jesus
+                        </h2>
+
+                        <p>
+                            Add your featured devotional,
+                            Bible study or special resource
+                            here.
+                        </p>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary">
+                            EXPLORE RESOURCE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LIBRARY ================= -->
+
+        <section class="resource-library">
+
+            <div class="container">
+
+                <div class="resource-library-heading">
+
+                    <p class="eyebrow">
+                        RESOURCE LIBRARY
+                    </p>
+
+                    <h2>
+                        Go deeper.
+                    </h2>
+
+                </div>
+
+
+                <div class="resource-list">
+
+
+                    <a href="#"
+                       class="resource-row">
+
+                        <span class="resource-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Sermons & Messages
+                        </h3>
+
+                        <p>
+                            Watch and listen to messages
+                            from God's Word.
+                        </p>
+
+                        <span class="resource-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="resource-row">
+
+                        <span class="resource-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Devotionals
+                        </h3>
+
+                        <p>
+                            Short reflections to help you
+                            walk with Jesus every day.
+                        </p>
+
+                        <span class="resource-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="resource-row">
+
+                        <span class="resource-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Bible Studies
+                        </h3>
+
+                        <p>
+                            Study guides and Scripture
+                            resources for deeper learning.
+                        </p>
+
+                        <span class="resource-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="resource-row">
+
+                        <span class="resource-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Prayer Resources
+                        </h3>
+
+                        <p>
+                            Guides and tools to help develop
+                            a deeper prayer life.
+                        </p>
+
+                        <span class="resource-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DEVOTIONALS ================= -->
+
+        <section class="devotionals-section">
+
+            <div class="container">
+
+                <div class="devotional-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            DEVOTIONALS
+                        </p>
+
+                        <h2>
+                            A little time
+                            with God.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Short, thoughtful reflections designed
+                        to help you pause, reflect and draw
+                        closer to Christ.
+                    </p>
+
+                </div>
+
+
+                <div class="devotional-grid">
+
+
+                    <article class="devotional-card">
+
+                        <span>
+                            DEVOTIONAL 01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                When You
+                                Feel Far Away
+                            </h3>
+
+                            <p>
+                                A reflection on seeking God
+                                even when He feels distant.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="devotional-card">
+
+                        <span>
+                            DEVOTIONAL 02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Learning
+                                to Trust
+                            </h3>
+
+                            <p>
+                                Finding confidence in God's
+                                faithfulness.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="devotional-card">
+
+                        <span>
+                            DEVOTIONAL 03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                A Quiet
+                                Heart
+                            </h3>
+
+                            <p>
+                                Making room to hear God
+                                in a busy world.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PRAYER ================= -->
+
+        <section class="prayer-resources">
+
+            <div class="container prayer-resource-grid">
+
+                <div class="prayer-resource-content">
+
+                    <p class="about-kicker">
+                        PRAYER
+                    </p>
+
+                    <h2>
+                        Make prayer
+                        a rhythm.
+                    </h2>
+
+                    <p>
+                        Explore prayer guides, prayer topics
+                        and practical resources designed to
+                        help you seek God consistently.
+                    </p>
+
+                    <a href="connect.html">
+                        REQUEST PRAYER →
+                    </a>
+
+                </div>
+
+
+                <div class="prayer-resource-image">
+                    PRAYER IMAGE
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DOWNLOADS ================= -->
+
+        <section class="downloads-section">
+
+            <div class="container">
+
+                <div class="downloads-heading">
+
+                    <p class="eyebrow">
+                        DOWNLOADS
+                    </p>
+
+                    <h2>
+                        Take it
+                        with you.
+                    </h2>
+
+                </div>
+
+
+                <div class="download-list">
+
+                    <div class="download-row">
+
+                        <strong>
+                            Bible Reading Plan
+                        </strong>
+
+                        <span>
+                            PDF
+                        </span>
+
+                        <a href="#">
+                            ↓
+                        </a>
+
+                    </div>
+
+
+                    <div class="download-row">
+
+                        <strong>
+                            Prayer Guide
+                        </strong>
+
+                        <span>
+                            PDF
+                        </span>
+
+                        <a href="#">
+                            ↓
+                        </a>
+
+                    </div>
+
+
+                    <div class="download-row">
+
+                        <strong>
+                            Church Calendar
+                        </strong>
+
+                        <span>
+                            PDF
+                        </span>
+
+                        <a href="#">
+                            ↓
+                        </a>
+
+                    </div>
+
+
+                    <div class="download-row">
+
+                        <strong>
+                            Bible Study Guide
+                        </strong>
+
+                        <span>
+                            PDF
+                        </span>
+
+                        <a href="#">
+                            ↓
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= QUESTIONS ================= -->
+
+        <section class="questions-section">
+
+            <div class="container questions-layout">
+
+                <div class="questions-heading">
+
+                    <p class="eyebrow">
+                        QUESTIONS
+                    </p>
+
+                    <h2>
+                        Things you
+                        might wonder.
+                    </h2>
+
+                    <p>
+                        Find answers to some common questions
+                        about Zion Church.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button">
+
+                            <span>
+                                What should I expect when I visit?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Add information about what a
+                                first-time visitor can expect
+                                when attending a service.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button">
+
+                            <span>
+                                What time does the service begin?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Add your current service
+                                timings here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button">
+
+                            <span>
+                                Is there Sunday School?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Add information about your
+                                Sunday School classes here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-item">
+
+                        <button
+                            class="faq-question"
+                            type="button">
+
+                            <span>
+                                How can I get connected?
+                            </span>
+
+                            <span class="faq-icon">
+                                +
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+
+                            <p>
+                                Tell visitors how they can
+                                join a ministry, small group
+                                or church community.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="resources-cta">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    KEEP GOING
+                </p>
+
+                <h2>
+                    There's always
+                    more to discover.
+                </h2>
+
+                <p>
+                    Explore the Word, listen to a message
+                    and keep growing in Christ.
+                </p>
+
+                <a
+                    href="sermons.html"
+                    class="btn btn-primary">
+                    EXPLORE SERMONS
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="logo footer-logo">
+
+                    <span class="logo-mark">
+                        Z
+                    </span>
+
+                    <span class="logo-text">
+                        <strong>ZION</strong>
+                        <small>CHURCH</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    A community growing together
+                    in Christ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="about.html">About</a>
+
+                <a href="ministries.html">
+                    Ministries
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="sermons.html">
+                    Sermons
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="connect.html">
+                    Connect
+                </a>
+
+                <a href="resources.html">
+                    Resources
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Visit
+                </h4>
+
+                <p>
+                    Zion Church<br>
+                    Bengaluru, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                Zion Church
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= FAQ SCRIPT ================= -->
+
+    <script>
+
+        document
+            .querySelectorAll(".faq-question")
+            .forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    const item =
+                        button.closest(".faq-item");
+
+                    item.classList.toggle("open");
+
+                });
+
+            });
+
+    </script>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
