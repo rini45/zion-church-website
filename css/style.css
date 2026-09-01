@@ -1065,3 +1065,88 @@ p {
         font-size: 2.3rem;
     }
 }
+/* =========================================================
+   19. JAVASCRIPT STATES & ANIMATIONS
+   ========================================================= */
+
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* HEADER WHEN SCROLLING */
+
+.site-header.scrolled {
+    position: fixed;
+    background: rgba(18, 22, 18, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    animation: headerDrop 0.3s ease;
+}
+
+@keyframes headerDrop {
+
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ACTIVE NAVIGATION */
+
+.main-nav a.active {
+    opacity: 1;
+}
+
+.main-nav a.active::after {
+    width: 100%;
+}
+
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 760px) {
+
+    .main-nav.mobile-open {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 72px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 40px 24px;
+
+        background: #171c18;
+
+        gap: 24px;
+
+        overflow-y: auto;
+    }
+
+    .main-nav.mobile-open a {
+        font-size: 1.4rem;
+        opacity: 1;
+    }
+
+}
