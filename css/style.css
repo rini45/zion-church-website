@@ -1,11 +1,38 @@
-/* =========================================================
-   ZION CHURCH WEBSITE
-   GLOBAL STYLESHEET
+ /* =========================================================
+   ZION CHURCH
+   MASTER STYLESHEET
+   Clean / Modern / Editorial / Responsive
    ========================================================= */
 
 
 /* =========================================================
-   01. RESET
+   01 — ROOT
+   ========================================================= */
+
+:root {
+    --ink: #151814;
+    --muted: #686e66;
+    --soft: #8b9088;
+
+    --paper: #f5f4ef;
+    --paper-2: #e8e9e2;
+
+    --dark: #1d251e;
+    --dark-2: #111611;
+
+    --line: rgba(21, 24, 20, 0.13);
+    --line-light: rgba(255,255,255,0.15);
+
+    --white: #ffffff;
+
+    --max: 1240px;
+
+    --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* =========================================================
+   02 — RESET
    ========================================================= */
 
 * {
@@ -19,16 +46,34 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f7f6f2;
-    color: #171b17;
-    line-height: 1.6;
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family:
+        Inter,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
 img {
-    max-width: 100%;
     display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 a {
@@ -36,75 +81,129 @@ a {
     text-decoration: none;
 }
 
-button {
-    font: inherit;
-}
+
+/* =========================================================
+   03 — CONTAINER
+   ========================================================= */
 
 .container {
-    width: min(1180px, calc(100% - 48px));
-    margin: 0 auto;
+    width: min(
+        calc(100% - 80px),
+        var(--max)
+    );
+
+    margin-inline: auto;
 }
 
 
 /* =========================================================
-   02. TYPOGRAPHY
+   04 — TYPOGRAPHY
    ========================================================= */
 
 h1,
 h2,
 h3,
+h4,
+p {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
 h4 {
-    line-height: 1.1;
     font-weight: 500;
+    line-height: .98;
 }
 
 h1 {
-    font-size: clamp(3rem, 7vw, 6.8rem);
-    letter-spacing: -0.055em;
+    font-size: clamp(
+        4.5rem,
+        10vw,
+        10rem
+    );
+
+    letter-spacing: -.07em;
 }
 
 h2 {
-    font-size: clamp(2.4rem, 5vw, 4.5rem);
-    letter-spacing: -0.045em;
+    font-size: clamp(
+        3.5rem,
+        7vw,
+        7rem
+    );
+
+    letter-spacing: -.065em;
 }
 
 h3 {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
+    letter-spacing: -.025em;
 }
 
 p {
-    color: #626761;
+    color: var(--muted);
 }
 
 .eyebrow {
-    display: inline-block;
-    margin-bottom: 18px;
-    font-size: 0.72rem;
+    display: block;
+
+    margin-bottom: 24px;
+
+    font-size: .68rem;
     font-weight: 700;
-    letter-spacing: 0.18em;
-    color: #596052;
+
+    letter-spacing: .18em;
+    text-transform: uppercase;
+
+    color: var(--soft);
 }
 
 
 /* =========================================================
-   03. HEADER
+   05 — HEADER
    ========================================================= */
 
 .site-header {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
-    z-index: 100;
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+
+    z-index: 1000;
+
+    color: var(--white);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.16);
+
+    transition:
+        background .35s ease,
+        backdrop-filter .35s ease,
+        border-color .35s ease;
+}
+
+.site-header.scrolled {
+    position: fixed;
+
+    background:
+        rgba(17,22,17,.88);
+
+    backdrop-filter: blur(18px);
+
+    border-color:
+        rgba(255,255,255,.08);
 }
 
 .nav-container {
-    height: 86px;
+    height: 88px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 30px;
 }
 
@@ -114,36 +213,47 @@ p {
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
+
+    gap: 12px;
+
+    flex-shrink: 0;
 }
 
 .logo-mark {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
+
     display: grid;
     place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.65);
+
+    border:
+        1px solid rgba(255,255,255,.65);
+
     border-radius: 50%;
+
     font-family: Georgia, serif;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
 }
 
 .logo-text {
     display: flex;
     flex-direction: column;
+
     line-height: 1;
 }
 
 .logo-text strong {
-    font-size: 0.9rem;
-    letter-spacing: 0.16em;
+    font-size: .88rem;
+    letter-spacing: .18em;
 }
 
 .logo-text small {
-    margin-top: 4px;
-    font-size: 0.55rem;
-    letter-spacing: 0.24em;
-    opacity: 0.7;
+    margin-top: 5px;
+
+    font-size: .5rem;
+    letter-spacing: .25em;
+
+    opacity: .6;
 }
 
 
@@ -152,241 +262,305 @@ p {
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+
+    gap: 30px;
 }
 
 .main-nav a {
     position: relative;
-    font-size: 0.78rem;
+
+    font-size: .72rem;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    opacity: 0.82;
-    transition: opacity 0.25s ease;
+
+    opacity: .72;
+
+    transition:
+        opacity .25s ease;
 }
 
 .main-nav a::after {
     content: "";
+
     position: absolute;
+
     left: 0;
-    bottom: -7px;
+    bottom: -9px;
+
     width: 0;
     height: 1px;
-    background: #ffffff;
-    transition: width 0.25s ease;
+
+    background: currentColor;
+
+    transition:
+        width .3s var(--ease);
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active {
     opacity: 1;
 }
 
-.main-nav a:hover::after {
+.main-nav a:hover::after,
+.main-nav a.active::after {
     width: 100%;
 }
 
 
-/* LIVE BUTTON */
+/* WATCH LIVE */
 
 .nav-live-btn {
-    padding: 11px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        12px 19px;
+
+    border:
+        1px solid rgba(255,255,255,.45);
+
     border-radius: 100px;
-    font-size: 0.72rem;
+
+    font-size: .65rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+
+    letter-spacing: .1em;
     text-transform: uppercase;
+
     transition:
-        background 0.25s ease,
-        color 0.25s ease;
+        background .25s ease,
+        color .25s ease;
 }
 
 .nav-live-btn:hover {
-    background: #ffffff;
-    color: #171b17;
+    background: var(--white);
+    color: var(--ink);
 }
 
 
-/* MOBILE MENU */
+/* MOBILE MENU BUTTON */
 
 .menu-toggle {
     display: none;
+
     width: 42px;
     height: 42px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+
+    border:
+        1px solid rgba(255,255,255,.45);
+
     border-radius: 50%;
+
     background: transparent;
-    color: #ffffff;
-    cursor: pointer;
+    color: white;
 }
 
 
 /* =========================================================
-   04. HERO
+   06 — HOME HERO
    ========================================================= */
 
 .hero {
     position: relative;
-    min-height: 92vh;
+
+    min-height: 100vh;
+
     display: flex;
     align-items: center;
+
     overflow: hidden;
+
+    color: white;
 
     background:
         linear-gradient(
             90deg,
-            rgba(13, 20, 14, 0.9),
-            rgba(13, 20, 14, 0.56),
-            rgba(13, 20, 14, 0.3)
+            rgba(10,15,10,.88),
+            rgba(10,15,10,.55),
+            rgba(10,15,10,.22)
         ),
-        url("../images/hero.jpg") center / cover no-repeat;
-
-    color: #ffffff;
+        url("../images/hero.jpg")
+        center / cover no-repeat;
 }
 
-.hero-overlay {
+.hero::after {
+    content: "";
+
     position: absolute;
     inset: 0;
+
     background:
         linear-gradient(
             to top,
-            rgba(10, 15, 11, 0.55),
-            transparent 45%
+            rgba(10,15,10,.72),
+            transparent 50%
         );
+
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
+
     z-index: 2;
-    padding-top: 100px;
+
+    padding-top: 80px;
+
+    max-width: 1000px;
 }
 
 .hero .eyebrow {
-    color: rgba(255, 255, 255, 0.72);
+    color:
+        rgba(255,255,255,.62);
 }
 
 .hero h1 {
-    max-width: 900px;
+    max-width: 1000px;
 }
 
 .hero-description {
     max-width: 570px;
-    margin-top: 28px;
-    color: rgba(255, 255, 255, 0.76);
-    font-size: 1.05rem;
+
+    margin-top: 32px;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size: 1rem;
 }
 
 .hero-buttons {
     display: flex;
+
     gap: 12px;
-    margin-top: 36px;
+
+    margin-top: 38px;
 }
-
-
-/* =========================================================
-   05. BUTTONS
-   ========================================================= */
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-    padding: 0 23px;
-    border-radius: 100px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary {
-    background: #ffffff;
-    color: #171b17;
-}
-
-.btn-primary:hover {
-    background: #e9e9e3;
-}
-
-.btn-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    color: #ffffff;
-}
-
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.btn-light {
-    background: #ffffff;
-    color: #171b17;
-}
-
-
-/* =========================================================
-   06. HERO SCROLL
-   ========================================================= */
 
 .hero-scroll {
     position: absolute;
-    right: 48px;
-    bottom: 40px;
-    z-index: 2;
+
+    right: 50px;
+    bottom: 45px;
+
+    z-index: 3;
 
     display: flex;
     align-items: center;
+
     gap: 14px;
 
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 0.65rem;
+    color:
+        rgba(255,255,255,.55);
+
+    font-size: .62rem;
+
+    letter-spacing: .14em;
     text-transform: uppercase;
-    letter-spacing: 0.13em;
 }
 
 .scroll-line {
-    display: block;
-    width: 50px;
+    width: 55px;
     height: 1px;
-    background: rgba(255, 255, 255, 0.5);
+
+    background:
+        rgba(255,255,255,.45);
 }
 
 
 /* =========================================================
-   07. SERVICE SECTION
+   07 — BUTTONS
+   ========================================================= */
+
+.btn {
+    min-height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        0 24px;
+
+    border-radius: 100px;
+
+    font-size: .65rem;
+    font-weight: 700;
+
+    letter-spacing: .11em;
+    text-transform: uppercase;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: white;
+    color: var(--ink);
+}
+
+.btn-secondary {
+    border:
+        1px solid rgba(255,255,255,.45);
+
+    color: white;
+}
+
+.btn-secondary:hover {
+    background:
+        rgba(255,255,255,.1);
+}
+
+.btn-light {
+    background: white;
+    color: var(--ink);
+}
+
+
+/* =========================================================
+   08 — SERVICE TIMES
    ========================================================= */
 
 .service-section {
-    padding: 110px 0;
-    background: #f7f6f2;
-}
+    padding: 120px 0;
 
-.section-heading {
-    max-width: 750px;
+    background: var(--paper);
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     margin-top: 65px;
-    border-top: 1px solid #d9d9d2;
+
+    border-top:
+        1px solid var(--line);
 }
 
 .service-item {
     display: flex;
-    gap: 28px;
-    padding: 32px 28px 32px 0;
-    border-right: 1px solid #d9d9d2;
+
+    gap: 25px;
+
+    padding:
+        35px 30px 35px 0;
+
+    border-right:
+        1px solid var(--line);
 }
 
 .service-item:not(:first-child) {
-    padding-left: 28px;
+    padding-left: 30px;
 }
 
 .service-item:last-child {
@@ -394,153 +568,224 @@ p {
 }
 
 .service-number {
-    color: #9b9f98;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: .68rem;
+
+    color: var(--soft);
+
+    letter-spacing: .1em;
 }
 
 .service-item h3 {
-    margin-bottom: 7px;
+    margin-bottom: 9px;
 }
 
 .service-item p {
-    font-size: 0.9rem;
+    font-size: .86rem;
 }
 
 
 /* =========================================================
-   08. LIVE SECTION
+   09 — LIVE
    ========================================================= */
 
 .live-section {
-    padding: 120px 0;
-    background: #171c18;
-    color: #ffffff;
+    padding: 130px 0;
+
+    background: var(--dark);
+
+    color: white;
 }
 
 .live-header {
     display: flex;
+
     align-items: flex-end;
     justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 45px;
+
+    gap: 40px;
+
+    margin-bottom: 50px;
 }
 
 .live-section .eyebrow {
-    color: rgba(255, 255, 255, 0.5);
+    color:
+        rgba(255,255,255,.45);
 }
 
 .live-section h2 {
-    max-width: 650px;
+    max-width: 750px;
 }
 
 .live-status {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    padding-bottom: 8px;
 
-    font-size: 0.7rem;
+    align-items: center;
+
+    gap: 9px;
+
+    padding-bottom: 9px;
+
+    font-size: .65rem;
+
+    letter-spacing: .13em;
+
     text-transform: uppercase;
-    letter-spacing: 0.12em;
 }
 
 .live-dot {
     width: 8px;
     height: 8px;
+
     border-radius: 50%;
-    background: #d65a5a;
+
+    background: #d35b5b;
+
+    box-shadow:
+        0 0 0 5px rgba(211,91,91,.1);
 }
 
 .video-placeholder {
-    position: relative;
-    min-height: 570px;
+    min-height: 580px;
+
     display: grid;
     place-items: center;
-    overflow: hidden;
 
     background:
         linear-gradient(
             135deg,
-            #31372f,
-            #202620
+            #343b34,
+            #1b211b
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+.video-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.07),
+            transparent 65%
         );
 }
 
 .video-content {
+    position: relative;
+
     text-align: center;
 }
 
+.play-button {
+    width: 82px;
+    height: 82px;
+
+    margin: auto;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255,255,255,.5);
+
+    border-radius: 50%;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.08);
+
+    background:
+        rgba(255,255,255,.08);
+}
+
 .video-content h3 {
-    margin-top: 22px;
-    font-size: 1.8rem;
+    margin-top: 24px;
+
+    font-size: 1.7rem;
 }
 
 .video-content p {
     margin-top: 8px;
-    color: rgba(255, 255, 255, 0.55);
-}
 
-.play-button {
-    width: 76px;
-    height: 76px;
-    display: grid;
-    place-items: center;
-    margin: 0 auto;
-
-    border: 1px solid rgba(255, 255, 255, 0.55);
-    border-radius: 50%;
-
-    font-size: 1rem;
+    color:
+        rgba(255,255,255,.5);
 }
 
 
 /* =========================================================
-   09. EVENTS
+   10 — EVENTS
    ========================================================= */
 
 .events-section {
-    padding: 120px 0;
-    background: #f7f6f2;
+    padding: 125px 0;
+
+    background: var(--paper);
 }
 
 .section-top {
     display: flex;
+
     align-items: flex-end;
     justify-content: space-between;
+
     gap: 30px;
+
     margin-bottom: 55px;
 }
 
 .text-link {
     display: inline-block;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #aeb1a9;
 
-    font-size: 0.72rem;
+    padding-bottom: 6px;
+
+    border-bottom:
+        1px solid #aeb1a9;
+
+    font-size: .65rem;
+
     font-weight: 700;
-    letter-spacing: 0.08em;
+
+    letter-spacing: .1em;
+
     text-transform: uppercase;
-
-    transition: opacity 0.2s ease;
-}
-
-.text-link:hover {
-    opacity: 0.55;
 }
 
 .event-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid #d9d9d2;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    border-top:
+        1px solid var(--line);
 }
 
 .event-card {
     display: flex;
+
     gap: 25px;
-    padding: 35px 30px 35px 0;
-    border-bottom: 1px solid #d9d9d2;
-    border-right: 1px solid #d9d9d2;
+
+    padding:
+        35px 30px 38px 0;
+
+    border-right:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
 }
 
 .event-card:not(:first-child) {
@@ -552,32 +797,45 @@ p {
 }
 
 .event-date {
-    width: 52px;
-    flex: 0 0 52px;
+    width: 55px;
+
+    flex: 0 0 55px;
+
     text-align: center;
 }
 
 .event-date strong {
     display: block;
+
     font-size: 2.1rem;
-    line-height: 1;
+
     font-weight: 500;
+
+    line-height: 1;
 }
 
 .event-date span {
     display: block;
-    margin-top: 5px;
-    font-size: 0.62rem;
+
+    margin-top: 6px;
+
+    font-size: .58rem;
+
     font-weight: 700;
-    letter-spacing: 0.12em;
-    color: #8b8f88;
+
+    letter-spacing: .12em;
+
+    color: var(--soft);
 }
 
 .event-category {
-    font-size: 0.62rem;
+    font-size: .6rem;
+
     font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #777c74;
+
+    letter-spacing: .14em;
+
+    color: var(--soft);
 }
 
 .event-info h3 {
@@ -585,63 +843,78 @@ p {
 }
 
 .event-info p {
-    margin-top: 7px;
-    font-size: 0.82rem;
+    margin-top: 8px;
+
+    font-size: .8rem;
 }
 
 .event-info a {
     display: inline-block;
-    margin-top: 20px;
-    font-size: 0.72rem;
+
+    margin-top: 18px;
+
+    font-size: .65rem;
+
     font-weight: 700;
+
+    letter-spacing: .08em;
 }
 
 
 /* =========================================================
-   10. SERMONS
+   11 — SERMONS
    ========================================================= */
 
 .sermons-section {
-    padding: 120px 0;
-    background: #e8e8e1;
+    padding: 125px 0;
+
+    background: var(--paper-2);
 }
 
 .sermon-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap: 18px;
 }
 
 .sermon-card {
     overflow: hidden;
-    background: #f7f6f2;
+
+    background: var(--paper);
 }
 
 .sermon-thumbnail {
     position: relative;
+
     aspect-ratio: 16 / 10;
+
     display: grid;
     place-items: center;
 
     background:
         linear-gradient(
             135deg,
-            #373c35,
-            #20241f
+            #383f37,
+            #1c211c
         );
 }
 
 .sermon-play {
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
+
     display: grid;
     place-items: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border:
+        1px solid rgba(255,255,255,.55);
+
     border-radius: 50%;
 
-    color: #ffffff;
-    font-size: 0.75rem;
+    color: white;
 }
 
 .sermon-info {
@@ -649,10 +922,13 @@ p {
 }
 
 .sermon-info > span {
-    font-size: 0.62rem;
+    font-size: .6rem;
+
     font-weight: 700;
-    letter-spacing: 0.13em;
-    color: #7c8179;
+
+    letter-spacing: .14em;
+
+    color: var(--soft);
 }
 
 .sermon-info h3 {
@@ -661,80 +937,109 @@ p {
 
 .sermon-info p {
     margin-top: 8px;
-    font-size: 0.8rem;
+
+    font-size: .8rem;
 }
 
 
 /* =========================================================
-   11. TESTIMONY
+   12 — TESTIMONIES
    ========================================================= */
 
 .testimony-section {
     padding: 150px 0;
-    background: #f7f6f2;
+
+    background: var(--paper);
 }
 
 .testimony-container {
-    max-width: 900px;
+    max-width: 980px;
 }
 
 .testimony-container blockquote {
-    margin: 15px 0 30px;
+    margin: 18px 0 35px;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(2.3rem, 5vw, 5rem);
-    line-height: 1.08;
-    letter-spacing: -0.035em;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(2.7rem, 6vw, 6rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -.045em;
 }
 
 .testimony-author {
     margin-bottom: 25px;
-    font-size: 0.8rem;
+
+    font-size: .75rem;
+
+    color: var(--soft);
 }
 
 
 /* =========================================================
-   12. PRAYER
+   13 — PRAYER
    ========================================================= */
 
 .prayer-section {
-    padding: 110px 0;
+    padding: 120px 0;
+
     background: #dfe2da;
 }
 
 .prayer-container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 80px;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    gap: 100px;
+
     align-items: center;
 }
 
 .prayer-container p {
-    max-width: 480px;
+    max-width: 520px;
+
     margin-bottom: 25px;
 }
 
 
 /* =========================================================
-   13. CONNECT
+   14 — CONNECT
    ========================================================= */
 
 .connect-section {
-    padding: 120px 0;
-    background: #f7f6f2;
+    padding: 125px 0;
+
+    background: var(--paper);
 }
 
 .connect-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     margin-top: 60px;
-    border-top: 1px solid #d9d9d2;
+
+    border-top:
+        1px solid var(--line);
 }
 
 .connect-card {
-    padding: 35px 30px 40px 0;
-    border-right: 1px solid #d9d9d2;
-    transition: transform 0.25s ease;
+    padding:
+        35px 30px 45px 0;
+
+    border-right:
+        1px solid var(--line);
+
+    transition:
+        transform .35s var(--ease);
 }
 
 .connect-card:not(:first-child) {
@@ -746,147 +1051,281 @@ p {
 }
 
 .connect-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-7px);
 }
 
 .connect-card > span {
-    font-size: 0.7rem;
-    color: #9b9f98;
+    color: var(--soft);
+
+    font-size: .67rem;
 }
 
 .connect-card h3 {
-    margin-top: 45px;
-    font-size: 1.8rem;
+    margin-top: 50px;
+
+    font-size: 1.9rem;
 }
 
 .connect-card p {
-    max-width: 300px;
-    margin: 12px 0 25px;
-    font-size: 0.9rem;
+    max-width: 320px;
+
+    margin:
+        12px 0 25px;
+
+    font-size: .86rem;
 }
 
 .connect-card strong {
-    font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-size: .63rem;
+
+    letter-spacing: .1em;
+
     text-transform: uppercase;
 }
 
 
 /* =========================================================
-   14. FINAL CTA
+   15 — FINAL CTA
    ========================================================= */
 
 .final-cta {
-    padding: 150px 0;
-    background: #202720;
-    color: #ffffff;
+    padding: 160px 0;
+
+    background: var(--dark);
+
+    color: white;
+
     text-align: center;
 }
 
 .final-cta .eyebrow {
-    color: rgba(255, 255, 255, 0.5);
+    color:
+        rgba(255,255,255,.45);
 }
 
 .final-cta h2 {
-    margin: 10px auto 40px;
-    max-width: 800px;
+    max-width: 850px;
+
+    margin:
+        10px auto 45px;
 }
 
 
 /* =========================================================
-   15. FOOTER
+   16 — FOOTER
    ========================================================= */
 
 .site-footer {
-    padding: 85px 0 25px;
-    background: #121612;
-    color: #ffffff;
+    padding:
+        90px 0 28px;
+
+    background: var(--dark-2);
+
+    color: white;
 }
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.6fr repeat(3, 1fr);
-    gap: 50px;
+
+    grid-template-columns:
+        1.7fr repeat(3,1fr);
+
+    gap: 55px;
+
     padding-bottom: 75px;
 }
 
 .footer-logo {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .footer-brand p {
-    max-width: 280px;
-    color: rgba(255, 255, 255, 0.48);
-    font-size: 0.85rem;
+    max-width: 300px;
+
+    color:
+        rgba(255,255,255,.45);
+
+    font-size: .8rem;
 }
 
 .footer-column {
     display: flex;
+
     flex-direction: column;
-    gap: 11px;
+
+    gap: 12px;
 }
 
 .footer-column h4 {
-    margin-bottom: 10px;
-    font-size: 0.7rem;
+    margin-bottom: 12px;
+
+    font-size: .62rem;
+
+    letter-spacing: .15em;
+
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: rgba(255, 255, 255, 0.45);
+
+    color:
+        rgba(255,255,255,.4);
 }
 
 .footer-column a,
 .footer-column p {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.82rem;
+    font-size: .78rem;
+
+    color:
+        rgba(255,255,255,.68);
 }
 
 .footer-column a:hover {
-    color: #ffffff;
+    color: white;
 }
 
 .footer-bottom {
     display: flex;
+
+    align-items: center;
+
     justify-content: space-between;
+
     gap: 20px;
+
     padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-top:
+        1px solid rgba(255,255,255,.12);
 }
 
 .footer-bottom p,
 .footer-bottom a {
-    color: rgba(255, 255, 255, 0.38);
-    font-size: 0.68rem;
+    font-size: .64rem;
+
+    color:
+        rgba(255,255,255,.35);
 }
 
 .footer-bottom div {
     display: flex;
+
     gap: 20px;
 }
 
 
 /* =========================================================
-   16. RESPONSIVE — TABLET
+   17 — SCROLL ANIMATIONS
+   ========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity .8s var(--ease),
+        transform .8s var(--ease);
+}
+
+.reveal.revealed {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   18 — MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    .nav-live-btn {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: grid;
+
+        place-items: center;
+    }
+
+    .main-nav.mobile-open {
+        position: fixed;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+        height:
+            calc(100vh - 72px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 26px;
+
+        padding:
+            45px 25px;
+
+        background:
+            rgba(17,22,17,.98);
+
+        backdrop-filter:
+            blur(20px);
+
+        overflow-y: auto;
+    }
+
+    .main-nav.mobile-open a {
+        font-size: 1.4rem;
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   19 — TABLET
    ========================================================= */
 
 @media (max-width: 1000px) {
+
+    .container {
+        width:
+            min(
+                calc(100% - 50px),
+                var(--max)
+            );
+    }
 
     .main-nav {
         gap: 18px;
     }
 
     .main-nav a {
-        font-size: 0.7rem;
+        font-size: .65rem;
     }
 
     .service-grid,
     .event-grid,
     .sermon-grid,
     .connect-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .event-card:nth-child(3n) {
-        border-right: 1px solid #d9d9d2;
+        border-right:
+            1px solid var(--line);
     }
 
     .event-card:nth-child(2n) {
@@ -895,62 +1334,68 @@ p {
 
     .prayer-container {
         grid-template-columns: 1fr;
-        gap: 35px;
+
+        gap: 45px;
     }
 
     .footer-grid {
-        grid-template-columns: 1.5fr 1fr 1fr;
+        grid-template-columns:
+            1.5fr 1fr 1fr;
     }
 
-    .footer-column:last-child {
-        grid-column: 2 / 4;
-    }
 }
 
 
 /* =========================================================
-   17. RESPONSIVE — MOBILE
+   20 — MOBILE
    ========================================================= */
 
 @media (max-width: 760px) {
 
     .container {
-        width: min(100% - 32px, 600px);
+        width:
+            calc(100% - 32px);
     }
 
     .nav-container {
         height: 72px;
     }
 
-    .main-nav,
-    .nav-live-btn {
-        display: none;
+    h1 {
+        font-size:
+            clamp(
+                4rem,
+                17vw,
+                6rem
+            );
     }
 
-    .menu-toggle {
-        display: grid;
-        place-items: center;
+    h2 {
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                5rem
+            );
     }
 
     .hero {
-        min-height: 88vh;
+        min-height: 92vh;
     }
 
     .hero-content {
-        padding-top: 70px;
-    }
-
-    .hero h1 {
-        font-size: clamp(3rem, 15vw, 5rem);
+        padding-top: 65px;
     }
 
     .hero-description {
-        font-size: 0.92rem;
+        font-size: .9rem;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: flex-start;
+
+        align-items:
+            flex-start;
     }
 
     .hero-scroll {
@@ -962,16 +1407,22 @@ p {
     .sermons-section,
     .connect-section,
     .live-section {
-        padding: 80px 0;
+        padding:
+            85px 0;
     }
 
     .testimony-section {
-        padding: 100px 0;
+        padding:
+            105px 0;
     }
 
     .final-cta {
-        padding: 110px 0;
+        padding:
+            110px 0;
     }
+
+
+    /* GRIDS */
 
     .service-grid,
     .event-grid,
@@ -980,519 +1431,117 @@ p {
         grid-template-columns: 1fr;
     }
 
+
+    /* SERVICES */
+
     .service-item {
         border-right: 0;
-        border-bottom: 1px solid #d9d9d2;
+
+        border-bottom:
+            1px solid var(--line);
     }
 
     .service-item:not(:first-child) {
         padding-left: 0;
     }
 
+
+    /* EVENTS */
+
     .event-card,
     .event-card:not(:first-child) {
         padding-left: 0;
         padding-right: 0;
+
         border-right: 0;
     }
+
+
+    /* SECTION HEADINGS */
 
     .section-top,
     .live-header {
         align-items: flex-start;
+
         flex-direction: column;
     }
 
+
+    /* VIDEO */
+
     .video-placeholder {
-        min-height: 300px;
+        min-height: 310px;
     }
+
+
+    /* CONNECT */
 
     .connect-card,
     .connect-card:not(:first-child) {
         padding-left: 0;
         padding-right: 0;
+
         border-right: 0;
-        border-bottom: 1px solid #d9d9d2;
+
+        border-bottom:
+            1px solid var(--line);
     }
 
     .connect-card h3 {
         margin-top: 30px;
     }
 
+
+    /* FOOTER */
+
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 45px 25px;
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            45px 25px;
     }
 
     .footer-brand {
-        grid-column: 1 / 3;
-    }
-
-    .footer-column:last-child {
-        grid-column: auto;
+        grid-column:
+            1 / 3;
     }
 
     .footer-bottom {
         flex-direction: column;
+
+        align-items:
+            flex-start;
     }
+
 }
 
 
 /* =========================================================
-   18. SMALL MOBILE
+   21 — SMALL MOBILE
    ========================================================= */
 
 @media (max-width: 430px) {
-
-    h2 {
-        font-size: 2.5rem;
-    }
-
-    .logo-text strong {
-        font-size: 0.8rem;
-    }
 
     .logo-mark {
         width: 36px;
         height: 36px;
     }
 
+    .logo-text strong {
+        font-size: .78rem;
+    }
+
     .btn {
-        min-height: 47px;
-        padding: 0 19px;
+        min-height: 48px;
+
+        padding:
+            0 20px;
     }
 
     .testimony-container blockquote {
-        font-size: 2.3rem;
-    }
-}
-/* =========================================================
-   19. JAVASCRIPT STATES & ANIMATIONS
-   ========================================================= */
-
-
-/* SCROLL REVEAL */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
-}
-
-.reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* HEADER WHEN SCROLLING */
-
-.site-header.scrolled {
-    position: fixed;
-    background: rgba(18, 22, 18, 0.94);
-    backdrop-filter: blur(14px);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-    animation: headerDrop 0.3s ease;
-}
-
-@keyframes headerDrop {
-
-    from {
-        transform: translateY(-100%);
-    }
-
-    to {
-        transform: translateY(0);
-    }
-
-}
-
-
-/* ACTIVE NAVIGATION */
-
-.main-nav a.active {
-    opacity: 1;
-}
-
-.main-nav a.active::after {
-    width: 100%;
-}
-
-
-/* MOBILE NAVIGATION */
-
-@media (max-width: 760px) {
-
-    .main-nav.mobile-open {
-        position: fixed;
-        top: 72px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 72px);
-
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        padding: 40px 24px;
-
-        background: #171c18;
-
-        gap: 24px;
-
-        overflow-y: auto;
-    }
-
-    .main-nav.mobile-open a {
-        font-size: 1.4rem;
-        opacity: 1;
-    }
-
-}
-/* =========================================================
-   ABOUT PAGE
-   ========================================================= */
-
-.about-page {
-    background: #f7f6f1;
-    color: #151814;
-}
-
-
-/* ABOUT HERO */
-
-.about-hero {
-    min-height: 78vh;
-    background: #202820;
-    color: #fff;
-    display: flex;
-    align-items: flex-end;
-    padding: 150px 7vw 90px;
-}
-
-.about-hero-content {
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-}
-
-.about-label {
-    font-size: 12px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    opacity: .55;
-    margin-bottom: 35px;
-}
-
-.about-hero h1 {
-    font-size: clamp(70px, 11vw, 170px);
-    line-height: .88;
-    letter-spacing: -7px;
-    font-weight: 500;
-    margin: 0;
-}
-
-.about-hero h1 span {
-    display: block;
-}
-
-.about-hero-description {
-    max-width: 520px;
-    margin-top: 45px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: rgba(255,255,255,.65);
-}
-
-
-/* GENERAL ABOUT SECTIONS */
-
-.about-section {
-    padding: 120px 7vw;
-}
-
-.about-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-
-/* ZION TODAY */
-
-.zion-today {
-    background: #f7f6f1;
-}
-
-.about-kicker {
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #858a81;
-    margin-bottom: 30px;
-}
-
-.zion-today h2 {
-    max-width: 950px;
-    font-size: clamp(45px, 6vw, 90px);
-    line-height: 1;
-    letter-spacing: -4px;
-    font-weight: 500;
-    margin: 0 0 45px;
-}
-
-.zion-today-text {
-    max-width: 700px;
-    font-size: 18px;
-    line-height: 1.8;
-    color: #555b54;
-}
-
-
-/* VISION + MISSION */
-
-.about-direction {
-    background: #e8e9e2;
-}
-
-.direction-heading {
-    max-width: 850px;
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: .95;
-    letter-spacing: -5px;
-    font-weight: 500;
-    margin-bottom: 75px;
-}
-
-.direction-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.direction-card {
-    padding: 45px;
-    background: #f7f6f1;
-    min-height: 300px;
-    border: 1px solid rgba(0,0,0,.08);
-}
-
-.direction-number {
-    display: block;
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #888d85;
-    margin-bottom: 70px;
-}
-
-.direction-card h3 {
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.direction-card p {
-    max-width: 500px;
-    color: #62675f;
-    line-height: 1.7;
-}
-
-
-/* VALUES */
-
-.about-values {
-    background: #f7f6f1;
-}
-
-.values-heading {
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: .95;
-    letter-spacing: -5px;
-    font-weight: 500;
-    margin-bottom: 70px;
-}
-
-.value-row {
-    display: grid;
-    grid-template-columns: 100px 1fr;
-    gap: 40px;
-    padding: 35px 0;
-    border-top: 1px solid #d5d6cf;
-}
-
-.value-row:last-child {
-    border-bottom: 1px solid #d5d6cf;
-}
-
-.value-number {
-    font-size: 11px;
-    letter-spacing: 2px;
-    color: #8b9088;
-}
-
-.value-row h3 {
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.value-row p {
-    max-width: 650px;
-    color: #666b64;
-    line-height: 1.7;
-}
-
-
-/* STORY */
-
-.about-story {
-    background: #202820;
-    color: #fff;
-}
-
-.about-story .about-kicker {
-    color: rgba(255,255,255,.5);
-}
-
-.story-heading {
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: .95;
-    letter-spacing: -5px;
-    font-weight: 500;
-    margin-bottom: 75px;
-}
-
-.story-row {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 60px;
-    padding: 40px 0;
-    border-top: 1px solid rgba(255,255,255,.15);
-}
-
-.story-row:last-child {
-    border-bottom: 1px solid rgba(255,255,255,.15);
-}
-
-.story-year {
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: rgba(255,255,255,.45);
-}
-
-.story-row h3 {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 12px;
-}
-
-.story-row p {
-    max-width: 650px;
-    color: rgba(255,255,255,.58);
-    line-height: 1.7;
-}
-
-
-/* LEADERSHIP */
-
-.about-team {
-    background: #e8e9e2;
-}
-
-.team-heading {
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: .95;
-    letter-spacing: -5px;
-    font-weight: 500;
-    margin-bottom: 70px;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.team-card {
-    background: #f7f6f1;
-}
-
-.team-image {
-    aspect-ratio: 4 / 5;
-    background: #d4d6cf;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #858a81;
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-.team-info {
-    padding: 25px;
-}
-
-.team-info h3 {
-    font-size: 24px;
-    font-weight: 500;
-    margin-bottom: 7px;
-}
-
-.team-info span {
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #858a81;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-
-    .about-hero {
-        min-height: 75vh;
-        padding: 130px 25px 65px;
-    }
-
-    .about-hero h1 {
-        font-size: clamp(65px, 18vw, 110px);
-        letter-spacing: -4px;
-    }
-
-    .about-section {
-        padding: 80px 25px;
-    }
-
-    .zion-today h2,
-    .direction-heading,
-    .values-heading,
-    .story-heading,
-    .team-heading {
-        letter-spacing: -3px;
-    }
-
-    .direction-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .direction-card {
-        min-height: 250px;
-        padding: 30px;
-    }
-
-    .story-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .value-row {
-        grid-template-columns: 45px 1fr;
-        gap: 15px;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr;
+        font-size:
+            2.5rem;
     }
 
 }
