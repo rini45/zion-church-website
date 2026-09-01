@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sermons | Zion Church</title>
+
+    <meta
+        name="description"
+        content="Watch and listen to sermons from Zion Church."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* =====================================================
+           SERMONS PAGE
+           ===================================================== */
+
+        .sermons-page {
+            background: #f4f3ee;
+            color: #171a16;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .sermons-hero {
+            min-height: 78vh;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 150px 0 90px;
+
+            background: #1e261f;
+            color: #fff;
+        }
+
+        .sermons-hero h1 {
+            max-width: 1100px;
+
+            margin-top: 20px;
+
+            font-size: clamp(
+                5rem,
+                12vw,
+                12rem
+            );
+
+            line-height: .82;
+            letter-spacing: -.075em;
+        }
+
+        .sermons-hero p {
+            max-width: 500px;
+
+            margin-top: 35px;
+
+            color: rgba(255,255,255,.58);
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= FEATURED ================= */
+
+        .featured-sermon {
+            padding: 140px 0;
+        }
+
+        .sermon-feature-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.3fr .7fr;
+
+            min-height: 600px;
+        }
+
+        .sermon-video {
+            position: relative;
+
+            min-height: 600px;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #5b6259,
+                    #252c26
+                );
+
+            color: rgba(255,255,255,.5);
+        }
+
+        .video-play {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform:
+                translate(-50%,-50%);
+
+            width: 90px;
+            height: 90px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.92);
+
+            color: #1e261f;
+
+            font-size: 1.4rem;
+        }
+
+        .video-label {
+            font-size: .6rem;
+
+            letter-spacing: .15em;
+        }
+
+        .featured-sermon-info {
+            padding: 65px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            background: #e1e2db;
+        }
+
+        .sermon-meta {
+            font-size: .62rem;
+
+            letter-spacing: .14em;
+
+            color: #858a82;
+        }
+
+        .featured-sermon-info h2 {
+            margin-top: 25px;
+
+            font-size: clamp(
+                3.5rem,
+                6vw,
+                6.5rem
+            );
+
+            line-height: .88;
+
+            letter-spacing: -.07em;
+        }
+
+        .featured-sermon-info p {
+            max-width: 430px;
+
+            margin-top: 30px;
+
+            line-height: 1.7;
+        }
+
+        .sermon-info-details {
+            display: flex;
+
+            gap: 30px;
+
+            margin-top: 35px;
+
+            font-size: .7rem;
+
+            color: #777d75;
+        }
+
+        .featured-sermon-info .btn {
+            align-self: flex-start;
+
+            margin-top: 35px;
+        }
+
+
+        /* ================= LATEST ================= */
+
+        .latest-sermons {
+            padding: 140px 0 160px;
+
+            background: #e1e2db;
+        }
+
+        .sermons-heading {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-end;
+
+            gap: 50px;
+
+            margin-bottom: 70px;
+        }
+
+        .sermons-heading h2 {
+            font-size: clamp(
+                4rem,
+                8vw,
+                8rem
+            );
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .sermons-heading p {
+            max-width: 350px;
+
+            color: #6f756d;
+
+            line-height: 1.7;
+        }
+
+
+        /* SERMON GRID */
+
+        .sermon-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .sermon-card {
+            background: #f4f3ee;
+
+            transition:
+                transform .3s ease;
+        }
+
+        .sermon-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .sermon-thumbnail {
+            position: relative;
+
+            aspect-ratio: 16 / 10;
+
+            display: grid;
+            place-items: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #858b82,
+                    #424a42
+                );
+
+            color: rgba(255,255,255,.45);
+        }
+
+        .small-play {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,.9);
+
+            color: #1e261f;
+        }
+
+        .sermon-card-content {
+            padding: 28px;
+        }
+
+        .sermon-card-content small {
+            font-size: .58rem;
+
+            letter-spacing: .13em;
+
+            color: #858a82;
+        }
+
+        .sermon-card-content h3 {
+            margin-top: 15px;
+
+            font-size: 1.7rem;
+
+            line-height: 1.05;
+        }
+
+        .sermon-card-content p {
+            margin-top: 12px;
+
+            font-size: .75rem;
+
+            color: #777d75;
+        }
+
+
+        /* ================= SERIES ================= */
+
+        .series-section {
+            padding: 140px 0;
+
+            background: #f4f3ee;
+        }
+
+        .series-intro {
+            max-width: 800px;
+
+            margin-bottom: 70px;
+        }
+
+        .series-intro h2 {
+            font-size: clamp(
+                4rem,
+                8vw,
+                8rem
+            );
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .series-list {
+            border-top:
+                1px solid rgba(0,0,0,.14);
+        }
+
+        .series-row {
+            display: grid;
+
+            grid-template-columns:
+                80px 1fr 250px 40px;
+
+            gap: 30px;
+
+            align-items: center;
+
+            padding: 32px 0;
+
+            border-bottom:
+                1px solid rgba(0,0,0,.14);
+
+            transition:
+                padding .3s ease,
+                background .3s ease;
+        }
+
+        .series-row:hover {
+            padding-left: 20px;
+            padding-right: 20px;
+
+            background: #e4e5de;
+        }
+
+        .series-number {
+            font-size: .6rem;
+
+            color: #858a82;
+        }
+
+        .series-row h3 {
+            font-size: 1.7rem;
+
+            font-weight: 500;
+        }
+
+        .series-row p {
+            font-size: .75rem;
+
+            color: #777d75;
+        }
+
+        .series-arrow {
+            font-size: 1.4rem;
+        }
+
+
+        /* ================= YOUTUBE ================= */
+
+        .youtube-section {
+            padding: 140px 0;
+
+            background: #1e261f;
+
+            color: #fff;
+        }
+
+        .youtube-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 90px;
+
+            align-items: center;
+        }
+
+        .youtube-content h2 {
+            max-width: 700px;
+
+            font-size: clamp(
+                4rem,
+                7vw,
+                7rem
+            );
+
+            line-height: .87;
+
+            letter-spacing: -.07em;
+        }
+
+        .youtube-content p {
+            max-width: 450px;
+
+            margin-top: 30px;
+
+            color: rgba(255,255,255,.55);
+
+            line-height: 1.7;
+        }
+
+        .youtube-content a {
+            display: inline-block;
+
+            margin-top: 35px;
+
+            padding-bottom: 8px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.5);
+
+            color: #fff;
+
+            font-size: .65rem;
+
+            font-weight: 700;
+
+            letter-spacing: .13em;
+        }
+
+        .youtube-box {
+            aspect-ratio: 16 / 10;
+
+            display: grid;
+            place-items: center;
+
+            background: #343b34;
+
+            color: rgba(255,255,255,.35);
+
+            font-size: .6rem;
+
+            letter-spacing: .15em;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .sermons-cta {
+            padding: 150px 0;
+
+            text-align: center;
+
+            background: #d7d9d1;
+        }
+
+        .sermons-cta h2 {
+            max-width: 900px;
+
+            margin: auto;
+
+            font-size: clamp(
+                4rem,
+                8vw,
+                8rem
+            );
+
+            line-height: .86;
+
+            letter-spacing: -.07em;
+        }
+
+        .sermons-cta p {
+            max-width: 500px;
+
+            margin: 30px auto 45px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media(max-width:760px) {
+
+            .sermons-hero {
+                min-height: 78vh;
+
+                padding:
+                    130px 0 70px;
+            }
+
+            .sermons-hero h1 {
+                font-size:
+                    clamp(
+                        4.5rem,
+                        18vw,
+                        7rem
+                    );
+            }
+
+            .featured-sermon,
+            .latest-sermons,
+            .series-section,
+            .youtube-section,
+            .sermons-cta {
+                padding: 90px 0;
+            }
+
+            .sermon-feature-grid,
+            .youtube-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sermon-video {
+                min-height: 400px;
+            }
+
+            .featured-sermon-info {
+                padding: 45px 25px;
+            }
+
+            .sermons-heading {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .sermon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .series-row {
+                grid-template-columns:
+                    45px 1fr 25px;
+
+                gap: 15px;
+            }
+
+            .series-row p {
+                display: none;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body class="sermons-page">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-mark">Z</span>
+
+                <span class="logo-text">
+                    <strong>ZION</strong>
+                    <small>CHURCH</small>
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ministries.html">
+                    Ministries
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="sermons.html"
+                   class="active">
+                    Sermons
+                </a>
+
+                <a href="resources.html">
+                    Resources
+                </a>
+
+                <a href="connect.html">
+                    Connect
+                </a>
+
+            </nav>
+
+
+            <a
+                href="index.html#watch-live"
+                class="nav-live-btn"
+            >
+                Watch Live
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                aria-label="Open menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="sermons-hero">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    SERMONS & MESSAGES
+                </p>
+
+                <h1>
+                    Words that<br>
+                    stay with you.
+                </h1>
+
+                <p>
+                    Messages from God's Word to encourage,
+                    challenge and strengthen your faith.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURED ================= -->
+
+        <section class="featured-sermon">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    FEATURED MESSAGE
+                </p>
+
+
+                <div class="sermon-feature-grid">
+
+
+                    <div class="sermon-video">
+
+                        <div class="video-play">
+                            ▶
+                        </div>
+
+                        <span class="video-label">
+                            SERMON VIDEO
+                        </span>
+
+                    </div>
+
+
+                    <div class="featured-sermon-info">
+
+                        <span class="sermon-meta">
+                            SUNDAY SERVICE · 00 MONTH 2026
+                        </span>
+
+                        <h2>
+                            Sermon
+                            Title.
+                        </h2>
+
+                        <p>
+                            Add a short introduction to the
+                            featured message. Tell visitors what
+                            they can expect from this sermon.
+                        </p>
+
+                        <div class="sermon-info-details">
+
+                            <span>
+                                PASTOR NAME
+                            </span>
+
+                            <span>
+                                JOHN 3:16
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="#"
+                            class="btn btn-primary"
+                        >
+                            WATCH MESSAGE
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LATEST ================= -->
+
+        <section class="latest-sermons">
+
+            <div class="container">
+
+                <div class="sermons-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            LATEST MESSAGES
+                        </p>
+
+                        <h2>
+                            Listen.<br>
+                            Learn.<br>
+                            Grow.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Explore recent messages and discover
+                        God's Word for every season of life.
+                    </p>
+
+                </div>
+
+
+                <div class="sermon-grid">
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 SEP
+                            </small>
+
+                            <h3>
+                                The Faith That Moves Us
+                            </h3>
+
+                            <p>
+                                Pastor Name · Matthew 17
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 SEP
+                            </small>
+
+                            <h3>
+                                When God Feels Silent
+                            </h3>
+
+                            <p>
+                                Pastor Name · Psalm 13
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 AUG
+                            </small>
+
+                            <h3>
+                                A Life of Prayer
+                            </h3>
+
+                            <p>
+                                Pastor Name · Luke 11
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 AUG
+                            </small>
+
+                            <h3>
+                                Known by Grace
+                            </h3>
+
+                            <p>
+                                Pastor Name · Ephesians 2
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 AUG
+                            </small>
+
+                            <h3>
+                                Trusting His Plan
+                            </h3>
+
+                            <p>
+                                Pastor Name · Proverbs 3
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="sermon-card">
+
+                        <div class="sermon-thumbnail">
+
+                            <div class="small-play">
+                                ▶
+                            </div>
+
+                        </div>
+
+                        <div class="sermon-card-content">
+
+                            <small>
+                                SUNDAY SERVICE · 00 AUG
+                            </small>
+
+                            <h3>
+                                Abide in Me
+                            </h3>
+
+                            <p>
+                                Pastor Name · John 15
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERIES ================= -->
+
+        <section class="series-section">
+
+            <div class="container">
+
+                <div class="series-intro">
+
+                    <p class="eyebrow">
+                        SERMON SERIES
+                    </p>
+
+                    <h2>
+                        Go deeper
+                        into the Word.
+                    </h2>
+
+                </div>
+
+
+                <div class="series-list">
+
+
+                    <a href="#"
+                       class="series-row">
+
+                        <span class="series-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Faith
+                        </h3>
+
+                        <p>
+                            Messages about trusting God
+                            through every season.
+                        </p>
+
+                        <span class="series-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="series-row">
+
+                        <span class="series-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Prayer
+                        </h3>
+
+                        <p>
+                            Learning to seek God through
+                            prayer and dependence.
+                        </p>
+
+                        <span class="series-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="series-row">
+
+                        <span class="series-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Christian Living
+                        </h3>
+
+                        <p>
+                            Following Jesus in everyday life.
+                        </p>
+
+                        <span class="series-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a href="#"
+                       class="series-row">
+
+                        <span class="series-number">
+                            04
+                        </span>
+
+                        <h3>
+                            The Gospel
+                        </h3>
+
+                        <p>
+                            Exploring the good news of
+                            Jesus Christ.
+                        </p>
+
+                        <span class="series-arrow">
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= YOUTUBE ================= -->
+
+        <section class="youtube-section">
+
+            <div class="container youtube-grid">
+
+                <div class="youtube-content">
+
+                    <p class="about-kicker">
+                        WATCH ONLINE
+                    </p>
+
+                    <h2>
+                        Don't miss
+                        a message.
+                    </h2>
+
+                    <p>
+                        Follow Zion Church online to watch
+                        live services, recent sermons and
+                        special programs.
+                    </p>
+
+                    <a href="#"
+                       target="_blank">
+                        VISIT OUR YOUTUBE CHANNEL →
+                    </a>
+
+                </div>
+
+
+                <div class="youtube-box">
+
+                    YOUTUBE CHANNEL / VIDEO
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="sermons-cta">
+
+            <div class="container">
+
+                <p class="eyebrow">
+                    JOIN US IN PERSON
+                </p>
+
+                <h2>
+                    The message
+                    is better together.
+                </h2>
+
+                <p>
+                    Come worship with us this Sunday
+                    and experience church in community.
+                </p>
+
+                <a
+                    href="contact.html"
+                    class="btn btn-primary"
+                >
+                    PLAN YOUR VISIT
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html"
+                   class="logo footer-logo">
+
+                    <span class="logo-mark">
+                        Z
+                    </span>
+
+                    <span class="logo-text">
+                        <strong>ZION</strong>
+                        <small>CHURCH</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    A community growing together
+                    in Christ.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="ministries.html">
+                    Ministries
+                </a>
+
+                <a href="events.html">
+                    Events
+                </a>
+
+                <a href="sermons.html">
+                    Sermons
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Connect
+                </h4>
+
+                <a href="connect.html">
+                    Connect
+                </a>
+
+                <a href="resources.html">
+                    Resources
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Visit
+                </h4>
+
+                <p>
+                    Zion Church<br>
+                    Bengaluru, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span data-current-year></span>
+                Zion Church
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
