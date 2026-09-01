@@ -1150,3 +1150,349 @@ p {
     }
 
 }
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+    background: #f7f6f1;
+    color: #151814;
+}
+
+
+/* ABOUT HERO */
+
+.about-hero {
+    min-height: 78vh;
+    background: #202820;
+    color: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 150px 7vw 90px;
+}
+
+.about-hero-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .55;
+    margin-bottom: 35px;
+}
+
+.about-hero h1 {
+    font-size: clamp(70px, 11vw, 170px);
+    line-height: .88;
+    letter-spacing: -7px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.about-hero h1 span {
+    display: block;
+}
+
+.about-hero-description {
+    max-width: 520px;
+    margin-top: 45px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.65);
+}
+
+
+/* GENERAL ABOUT SECTIONS */
+
+.about-section {
+    padding: 120px 7vw;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ZION TODAY */
+
+.zion-today {
+    background: #f7f6f1;
+}
+
+.about-kicker {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #858a81;
+    margin-bottom: 30px;
+}
+
+.zion-today h2 {
+    max-width: 950px;
+    font-size: clamp(45px, 6vw, 90px);
+    line-height: 1;
+    letter-spacing: -4px;
+    font-weight: 500;
+    margin: 0 0 45px;
+}
+
+.zion-today-text {
+    max-width: 700px;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555b54;
+}
+
+
+/* VISION + MISSION */
+
+.about-direction {
+    background: #e8e9e2;
+}
+
+.direction-heading {
+    max-width: 850px;
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .95;
+    letter-spacing: -5px;
+    font-weight: 500;
+    margin-bottom: 75px;
+}
+
+.direction-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.direction-card {
+    padding: 45px;
+    background: #f7f6f1;
+    min-height: 300px;
+    border: 1px solid rgba(0,0,0,.08);
+}
+
+.direction-number {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888d85;
+    margin-bottom: 70px;
+}
+
+.direction-card h3 {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.direction-card p {
+    max-width: 500px;
+    color: #62675f;
+    line-height: 1.7;
+}
+
+
+/* VALUES */
+
+.about-values {
+    background: #f7f6f1;
+}
+
+.values-heading {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .95;
+    letter-spacing: -5px;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+
+.value-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 40px;
+    padding: 35px 0;
+    border-top: 1px solid #d5d6cf;
+}
+
+.value-row:last-child {
+    border-bottom: 1px solid #d5d6cf;
+}
+
+.value-number {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #8b9088;
+}
+
+.value-row h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.value-row p {
+    max-width: 650px;
+    color: #666b64;
+    line-height: 1.7;
+}
+
+
+/* STORY */
+
+.about-story {
+    background: #202820;
+    color: #fff;
+}
+
+.about-story .about-kicker {
+    color: rgba(255,255,255,.5);
+}
+
+.story-heading {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .95;
+    letter-spacing: -5px;
+    font-weight: 500;
+    margin-bottom: 75px;
+}
+
+.story-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.story-row:last-child {
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.story-year {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.45);
+}
+
+.story-row h3 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.story-row p {
+    max-width: 650px;
+    color: rgba(255,255,255,.58);
+    line-height: 1.7;
+}
+
+
+/* LEADERSHIP */
+
+.about-team {
+    background: #e8e9e2;
+}
+
+.team-heading {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: .95;
+    letter-spacing: -5px;
+    font-weight: 500;
+    margin-bottom: 70px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.team-card {
+    background: #f7f6f1;
+}
+
+.team-image {
+    aspect-ratio: 4 / 5;
+    background: #d4d6cf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #858a81;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.team-info {
+    padding: 25px;
+}
+
+.team-info h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.team-info span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #858a81;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        min-height: 75vh;
+        padding: 130px 25px 65px;
+    }
+
+    .about-hero h1 {
+        font-size: clamp(65px, 18vw, 110px);
+        letter-spacing: -4px;
+    }
+
+    .about-section {
+        padding: 80px 25px;
+    }
+
+    .zion-today h2,
+    .direction-heading,
+    .values-heading,
+    .story-heading,
+    .team-heading {
+        letter-spacing: -3px;
+    }
+
+    .direction-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .direction-card {
+        min-height: 250px;
+        padding: 30px;
+    }
+
+    .story-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .value-row {
+        grid-template-columns: 45px 1fr;
+        gap: 15px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
